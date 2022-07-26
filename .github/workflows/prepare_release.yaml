@@ -1,0 +1,60 @@
+name: Prepare for release
+
+# This action:
+#   - Is triggered manually in a workflow dispatch;
+#   - Get the release number from semversioner;
+#   - Use Poetry to bump up the versions;
+#   - Update the changelog;
+#   - Create a new branch named release/<new_version>;
+#   - Open a draft PR to the main branch, so all the changes above can be reviewed.
+
+on:
+  workflow_dispatch:
+
+jobs:
+  prepare-for-release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.8.10
+
+      - name: Install Poetry
+        uses: abatilo/actions-poetry@v2.0.0
+        with:
+          poetry-version: 1.1.14
+
+      - name: Install dependencies
+        run: poetry install
+
+      - name: Bump version
+        id: bump-version
+        run: |
+          poetry run semversioner release
+          poetry version $(poetry run semversioner current-version)
+          echo "Poetry version is: $(poetry version --short)"
+          echo "::set-output name=version::$(poetry version --short)"
+
+      - name: Update Changelog
+        run: poetry run semversioner changelog > CHANGELOG.md
+
+      - uses: peter-evans/create-pull-request@v4
+        name: Create Pull Request
+        id: cpr
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "Prepared release ${{ steps.bump-version.outputs.version }}"
+          branch: "release/${{ steps.bump-version.outputs.version }}"
+          title: "Release ${{ steps.bump-version.outputs.version }}"
+          base: "main"
+          draft: false
+          delete-branch: true
+          body: "Automated changes by [prepare_release](.github/workflows/prepare_release.yaml) GitHub action."
+
+      - name: Show Pull Request info
+        if: ${{ steps.cpr.outputs.pull-request-number }}
+        run: |
+          echo "Pull Request Number - ${{ steps.cpr.outputs.pull-request-number }}"
+          echo "Pull Request URL - ${{ steps.cpr.outputs.pull-request-url }}"
