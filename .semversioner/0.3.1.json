@@ -1,0 +1,6 @@
+[
+  {
+    "description": "rename secrets.GITHUB_TOKEN to secrets.TOKEN",
+    "type": "patch"
+  }
+]
