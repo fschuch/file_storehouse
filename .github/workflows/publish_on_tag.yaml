@@ -57,5 +57,5 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           artifacts: "./dist/*.tar.gz,./dist/*.whl"
-          body: $(poetry run semversioner changelog --version ${{ github.ref_name }} --template .semversioner/templates/release.j2)
+          generateReleaseNotes: true
           token: ${{ secrets.TOKEN }}
