@@ -1,4 +1,0 @@
-{
-  "type": "minor",
-  "description": "Fix GitHub actions that prepares this package for release"
-}
