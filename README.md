@@ -16,7 +16,7 @@ There are four key points that are combined to achieving such a goal:
   # Store data to a file:
   file_manager[id] = file_content
   # Retrine data from a file
-  file_content = file_manager[<id>]
+  file_content = file_manager[id]
   # Delete a file
   del file_manager[id]
   # Loop through all files

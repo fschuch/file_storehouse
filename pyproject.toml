@@ -16,6 +16,7 @@ classifiers = [
 
 [tool.poetry.urls]
 "Bug Tracker" = "https://github.com/fschuch/file_storehouse/issues"
+"Changelog" = "https://github.com/fschuch/file_storehouse/blob/main/CHANGELOG.md"
 
 [tool.poetry.dependencies]
 python = "^3.8"
