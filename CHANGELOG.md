@@ -1,6 +1,10 @@
 # Changelog
 Note: version releases in the 0.x.y range may introduce breaking changes.
 
+## 0.3.1
+
+- patch: rename secrets.GITHUB_TOKEN to secrets.TOKEN
+
 ## 0.3.0
 
 - minor: Fix GitHub actions that prepares this package for release
