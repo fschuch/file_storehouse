@@ -47,11 +47,11 @@ jobs:
           poetry build
           poetry publish -r test-pypi
 
-      - name: Build and publish on PyPI
-        run: |
-          poetry config pypi-token.pypi ${{ secrets.PYPI_TOKEN }}
-          poetry build
-          poetry publish
+      # - name: Build and publish on PyPI
+      #   run: |
+      #     poetry config pypi-token.pypi ${{ secrets.PYPI_TOKEN }}
+      #     poetry build
+      #     poetry publish
       
       - name: Create release changelog
         run: poetry run semversioner changelog --template .semversioner/templates/release.j2 > body.md

@@ -1,11 +1,25 @@
 [tool.poetry]
-name = "MyProject"
-version = "0.1.0"
-description = ""
-authors = ["Jane Doe <jane_doe@some_email.com>"]
+name = "file-storehouse"
+version = "0.0.0"
+license = "MIT"
+description = "Manage files in bulk quantity using a friendly mapping interface"
+authors = ["Felipe N. Schuch <me@fschuch.com>"]
+readme = "README.md"
+repository = "https://github.com/fschuch/file_storehouse"
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Intended Audience :: Developers",
+    "Development Status :: 4 - Beta",
+]
+
+[tool.poetry.urls]
+"Bug Tracker" = "https://github.com/fschuch/file_storehouse/issues"
 
 [tool.poetry.dependencies]
 python = "^3.8"
+boto3 = "^1.24.36"
 
 [tool.poetry.dev-dependencies]
 mypy = "^0.971"
@@ -25,6 +39,9 @@ sphinx-autobuild = "^2021.3.14"
 sphinx-last-updated-by-git = "^0.3.2"
 sphinx-rtd-theme = "^1.0.0"
 pytest-random-order = "^1.0.4"
+hypothesis = "^6.52.4"
+docker-compose = "^1.29.2"
+pytest-docker = "^0.13.0"
 
 [tool.mypy]
 ignore_missing_imports = true

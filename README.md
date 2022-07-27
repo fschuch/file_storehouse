@@ -1,46 +1,48 @@
-# Poetry Template
+# File-Storehouse
 
-[![Test and build](https://github.com/ImperialCollegeLondon/poetry_template_2/actions/workflows/ci.yml/badge.svg)](https://github.com/ImperialCollegeLondon/poetry_template_2/actions/workflows/ci.yml)
+[![Test and build](https://github.com/fschuch/file_storehouse/actions/workflows/ci.yml/badge.svg)](https://github.com/fschuch/file_storehouse/actions/workflows/ci.yml)
+![python](https://img.shields.io/badge/Python-3.8%2B-brightgreen)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![PyPI Version](https://img.shields.io/pypi/v/file_storehouse.svg)](https://pypi.org/project/file_storehouse/)
 
-This is a minimal Python 3.9 application that uses [poetry](https://python-poetry.org) for packaging and dependency management. It also provides [pre-commit](https://pre-commit.com/) hooks (for [Black](https://black.readthedocs.io/en/stable/) and [Flake8](https://flake8.pycqa.org/en/latest/)) and automated tests using [pytest](https://pytest.org/) and [GitHub Actions](https://github.com/features/actions). Pre-commit hooks are automatically kept updated with a dedicated GitHub Action. It was developed by the [Imperial College Research Computing Service](https://www.imperial.ac.uk/admin-services/ict/self-service/research-support/rcs/).
+## Main Features
 
-To use this repository as a template for your own application:
+File-Storehouse is a lightweight Python package that aims to facilitate the management of files in bulk quantity.
 
-1. [Download and install Poetry](https://python-poetry.org/docs/#installation) following the instructions for your OS.
-1. Click the green "Use this template" button above
-1. Name and create your repository
-1. Clone your new repository and make it your working directory
-1. Replace instances of `myproject` with your own application name. Edit:
-   - `pyproject.toml`
-   - `tests/test_myproject.py`
-   - `setup.cfg`
-   - Rename `myproject` directory
-1. Set up the virtual environment:
+There are four key points that are combined to achieving such a goal:
 
-   ```bash
-   poetry install
-   ```
+* Mapping Interface - The file managers are leveraged by the Mapping and MutableMapping interfaces, which means that everything can be done using a friendly dict-like interface. For instance:
 
-1. Activate the virtual environment (alternatively, ensure any python-related command is preceded by `poetry run`):
+  ```python
+  # Store data to a file:
+  file_manager[id] = file_content
+  # Retrine data from a file
+  file_content = file_manager[<id>]
+  # Delete a file
+  del file_manager[id]
+  # Loop through all files
+  for id, content in file_manager.items():
+      pass
+  # and many more...
+  ```
 
-   ```bash
-   poetry shell
-   ```
+* Engine - Choose the engine (or back-end) your file managers are connected to:
 
-1. Install the git hooks:
+  * S3 buckets, powered by [boto3](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html);
+  * Local filesystem and more are planned.
 
-   ```bash
-   pre-commit install
-   ```
+* Key Mapping - Customize a two-way key mapping between the dict-like keys and the files' location at the engines according to the business rules of your application.
 
-1. Run the main app:
+* Transformations - Configure a chained operation the convert the files back and forward between your Python code and the storage. The supported operations are:
 
-   ```bash
-   python -m myproject
-   ```
+  * Encode/decode bytes and strings;
+  * Dump/load Json files;
+  * Compress/decompress tarballs and more transformations are planned.
 
-1. Run the tests:
+## Example
 
-   ```bash
-   pytest
-   ```
+Please, take a look at the [user story](tests/test_user_story.py) used for testing.
+
+## Copyright and License
+
+© 2022 Felipe N. Schuch. All content is under [MIT License](https://github.com/fschuch/file_storehouse/blob/master/LICENSE).
