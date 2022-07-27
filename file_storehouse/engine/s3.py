@@ -25,9 +25,7 @@ class EngineS3(EngineS3Data, EngineABC):
     def get_item(self, key: PathLike) -> FileLike:
         """Get the item related to the key."""
         try:
-            response = self.s3_client.get_object(
-                Bucket=self.bucket_name, Key=self._get_key(key)
-            )
+            response = self.s3_client.get_object(Bucket=self.bucket_name, Key=key)
         except self.s3_client.exceptions.NoSuchKey:
             raise KeyError(f"No such {key=}")
 
@@ -37,7 +35,7 @@ class EngineS3(EngineS3Data, EngineABC):
         """Set the item related to the key."""
         try:
             self.s3_client.put_object(
-                Body=file_content, Bucket=self.bucket_name, Key=self._get_key(key)
+                Body=file_content, Bucket=self.bucket_name, Key=key
             )
         except self.s3_client.exceptions.NoSuchKey:
             raise KeyError(f"No such {key=}")
@@ -45,11 +43,9 @@ class EngineS3(EngineS3Data, EngineABC):
     def delete_item(self, key: PathLike) -> None:
         """Delete the item related to the key."""
         try:
-            self.s3_client.delete_object(
-                Bucket=self.bucket_name, Key=self._get_key(key)
-            )
+            self.s3_client.delete_object(Bucket=self.bucket_name, Key=key)
         except self.s3_client.exceptions.NoSuchKey:
-            raise KeyError(f"No such key: {key}")
+            raise KeyError(f"No such key {key=}")
 
     def list_keys(self) -> Iterator[PathLike]:
         """List the keys related to the engine."""
@@ -68,13 +64,10 @@ class EngineS3(EngineS3Data, EngineABC):
         except self.s3_client.exceptions.BucketAlreadyOwnedByYou:
             pass
 
-    def convert_to_absolute_path(self, relative_path: PathLike) -> PathLike:
+    def convert_to_absolute_path(self, relative_path: PathLike) -> str:
         """Convert to absolute path."""
-        return PurePath(self.prefix, relative_path)
+        return str(PurePath(self.prefix, relative_path))
 
-    def convert_to_relative_path(self, absolute_path: PathLike) -> PathLike:
+    def convert_to_relative_path(self, absolute_path: str) -> PathLike:
         """Convert to relative path."""
         return PurePath(absolute_path).relative_to(self.prefix)
-
-    def _get_key(self, key: PathLike) -> str:
-        return str(self.convert_to_absolute_path(key))

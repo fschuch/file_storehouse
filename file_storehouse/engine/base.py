@@ -1,7 +1,7 @@
 """Base for engine."""
 
 from abc import ABC, abstractmethod
-from typing import Iterator
+from typing import Any, Iterator
 
 from ..type import FileLike, PathLike
 
@@ -30,11 +30,11 @@ class EngineABC(ABC):
         pass
 
     @abstractmethod
-    def convert_to_absolute_path(self, relative_path: PathLike) -> PathLike:
+    def convert_to_absolute_path(self, relative_path: PathLike) -> Any:
         """Convert to absolute path."""
         pass
 
     @abstractmethod
-    def convert_to_relative_path(self, absolute_path: PathLike) -> PathLike:
+    def convert_to_relative_path(self, absolute_path: Any) -> PathLike:
         """Convert to relative path."""
         pass

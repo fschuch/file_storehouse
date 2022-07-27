@@ -11,7 +11,7 @@ class FileManager(FileManagerReadOnly, MutableMapping):
 
     def __setitem__(self, key: Any, file_content: Any) -> None:
         """Upload a file to the client associated to the given key."""
-        engine_key = self.key_mapping.get_engine_key_from_dict(key)
+        engine_key = self._get_engine_key(key)
 
         _file_content = file_content
         for transformation in reversed(self.transformation_list):
@@ -21,5 +21,5 @@ class FileManager(FileManagerReadOnly, MutableMapping):
 
     def __delitem__(self, key: Any) -> None:
         """Delete a file from the client associated to the given id."""
-        engine_key = self.key_mapping.get_engine_key_from_dict(key)
+        engine_key = self._get_engine_key(key)
         self.engine.delete_item(engine_key)
