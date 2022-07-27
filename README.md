@@ -3,7 +3,6 @@
 [![Test and build](https://github.com/fschuch/file_storehouse/actions/workflows/ci.yml/badge.svg)](https://github.com/fschuch/file_storehouse/actions/workflows/ci.yml)
 ![python](https://img.shields.io/badge/Python-3.8%2B-brightgreen)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-[![PyPI Version](https://img.shields.io/pypi/v/file_storehouse.svg)](https://pypi.org/project/file_storehouse/)
 
 ## Main Features
 
@@ -33,7 +32,7 @@ There are four key points that are combined to achieving such a goal:
 
 * Key Mapping - Customize a two-way key mapping between the dict-like keys and the files' location at the engines according to the business rules of your application.
 
-* Transformations - Configure a chained operation the convert the files back and forward between your Python code and the storage. The supported operations are:
+* Transformations - Configure a chained operation to convert the files back and forward between your Python code and the storage. The supported operations are:
 
   * Encode/decode bytes and strings;
   * Dump/load Json files;
