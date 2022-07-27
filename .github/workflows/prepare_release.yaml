@@ -44,7 +44,7 @@ jobs:
         name: Create Pull Request
         id: cpr
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.TOKEN }}
           commit-message: "Prepared release ${{ steps.bump-version.outputs.version }}"
           branch: "release/${{ steps.bump-version.outputs.version }}"
           title: "Release ${{ steps.bump-version.outputs.version }}"

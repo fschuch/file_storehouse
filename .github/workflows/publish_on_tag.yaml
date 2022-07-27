@@ -61,4 +61,4 @@ jobs:
         with:
           artifacts: "./dist/*.tar.gz,./dist/*.whl"
           bodyFile: "body.md"
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.TOKEN }}
