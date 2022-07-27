@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "file-storehouse"
-version = "0.0.0"
+version = "0.2.0"
 license = "MIT"
 description = "Manage files in bulk quantity using a friendly mapping interface"
 authors = ["Felipe N. Schuch <me@fschuch.com>"]
