@@ -1,6 +1,11 @@
 # Changelog
 Note: version releases in the 0.x.y range may introduce breaking changes.
 
+## 0.3.3
+
+- patch: fix Publish on Tag
+- patch: fix absolute/relative path conversion at the engine and managers
+
 ## 0.3.2
 
 - patch: fix Publish on Tag

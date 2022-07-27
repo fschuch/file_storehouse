@@ -1,4 +1,0 @@
-{
-  "type": "patch",
-  "description": "fix absolute/relative path conversion at the engine and managers"
-}

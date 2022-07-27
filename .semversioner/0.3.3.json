@@ -1,0 +1,10 @@
+[
+  {
+    "description": "fix Publish on Tag",
+    "type": "patch"
+  },
+  {
+    "description": "fix absolute/relative path conversion at the engine and managers",
+    "type": "patch"
+  }
+]
