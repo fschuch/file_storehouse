@@ -52,13 +52,10 @@ jobs:
           poetry config pypi-token.pypi ${{ secrets.PYPI_TOKEN }}
           poetry build
           poetry publish
-      
-      - name: Create release changelog
-        run: poetry run semversioner changelog --template .semversioner/templates/release.j2 > body.md
 
       - name: Create release on GitHub
         uses: ncipollo/release-action@v1
         with:
           artifacts: "./dist/*.tar.gz,./dist/*.whl"
-          bodyFile: "body.md"
+          body: $(poetry run semversioner changelog --version ${{ github.ref_name }} --template .semversioner/templates/release.j2)
           token: ${{ secrets.TOKEN }}
