@@ -1,0 +1,14 @@
+[
+  {
+    "description": "Fix GitHub actions that prepares this package for release",
+    "type": "minor"
+  },
+  {
+    "description": "Fix broken link at the README file",
+    "type": "minor"
+  },
+  {
+    "description": "Fix some texts around",
+    "type": "minor"
+  }
+]

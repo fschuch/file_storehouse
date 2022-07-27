@@ -1,6 +1,12 @@
 # Changelog
 Note: version releases in the 0.x.y range may introduce breaking changes.
 
+## 0.3.0
+
+- minor: Fix GitHub actions that prepares this package for release
+- minor: Fix broken link at the README file
+- minor: Fix some texts around
+
 ## 0.2.0
 
 - minor: Add JSON load/dump transformation
