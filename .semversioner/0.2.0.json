@@ -1,0 +1,34 @@
+[
+  {
+    "description": "Add JSON load/dump transformation",
+    "type": "minor"
+  },
+  {
+    "description": "Add S3 engine",
+    "type": "minor"
+  },
+  {
+    "description": "Add documentation page (in progress)",
+    "type": "minor"
+  },
+  {
+    "description": "Add encode/decode transformation",
+    "type": "minor"
+  },
+  {
+    "description": "Add file managers using Mapping and MutableMapping protocols",
+    "type": "minor"
+  },
+  {
+    "description": "Add numerated file key mapping",
+    "type": "minor"
+  },
+  {
+    "description": "Add numerated folder key mapping",
+    "type": "minor"
+  },
+  {
+    "description": "Add raw key mapping",
+    "type": "minor"
+  }
+]
