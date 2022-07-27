@@ -2,7 +2,7 @@
 name = "file-storehouse"
 version = "0.2.0"
 license = "MIT"
-description = "Manage files in bulk quantity using a friendly mapping interface"
+description = "Manage files in bulk quantity using a friendly dict-like interface"
 authors = ["Felipe N. Schuch <me@fschuch.com>"]
 readme = "README.md"
 repository = "https://github.com/fschuch/file_storehouse"
