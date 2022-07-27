@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  minio:
+    image: minio/minio
+    networks:
+      - file-storehouse-net
+    volumes:
+      - minio_data:/data
+    ports:
+      - 9000:9000
+      - 9001:9001
+    environment:
+      - MINIO_ROOT_USER=compose-s3-key
+      - MINIO_ROOT_PASSWORD=compose-s3-secret
+    command:
+      [
+        "server",
+        "--compat",
+        "--console-address",
+        ':9001',
+        "/data"
+      ]
+
+volumes:
+  minio_data:
+
+
+networks:
+  file-storehouse-net:
+    driver: bridge

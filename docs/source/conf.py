@@ -28,7 +28,7 @@ project_metadata["author"] = project_metadata["authors"][0]
 # -- Project information -----------------------------------------------------
 
 project = project_metadata["name"]
-copyright = "2022, The Author"
+copyright = "2022, Felipe N. Schuch"
 author = project_metadata["author"]
 
 # The full version, including alpha/beta/rc tags
@@ -49,8 +49,13 @@ extensions = [
 ]
 
 intersphinx_mapping = {
-    "python": (
-        "https://docs.python.org/3",
+    "python": ("https://docs.python.org/3", None),
+    "boto3": ("https://boto3.amazonaws.com/v1/documentation/api/latest/", None),
+    "botocore": ("https://botocore.readthedocs.io/en/latest/", None),
+}
+extlinks = {
+    "boto3": (
+        "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/%s",
         None,
     ),
 }
