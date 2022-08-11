@@ -1,4 +1,0 @@
-{
-  "type": "patch",
-  "description": "Fix mypy not finding type hints or library stubs"
-}
