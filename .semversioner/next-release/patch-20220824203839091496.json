@@ -1,0 +1,4 @@
+{
+  "type": "patch",
+  "description": "remove release option from the triggerings to build and test the package"
+}
