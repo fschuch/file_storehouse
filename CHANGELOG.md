@@ -1,6 +1,12 @@
 # Changelog
 Note: version releases in the 0.x.y range may introduce breaking changes.
 
+## 0.4.0
+
+- minor: Add a new engine to manage the local file system
+- patch: remove obsolete test file
+- patch: remove release option from the triggerings to build and test the package
+
 ## 0.3.4
 
 - patch: Fix mypy not finding type hints or library stubs
