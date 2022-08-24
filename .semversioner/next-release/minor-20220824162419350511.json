@@ -1,0 +1,4 @@
+{
+  "type": "minor",
+  "description": "Add a new engine to manage the local file system"
+}

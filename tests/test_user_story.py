@@ -1,45 +1,52 @@
 """User story for an end-to-end test."""
 
+import tempfile
+from pathlib import Path
 from sys import platform
-from typing import Any
 
 from pytest import mark
 
 import file_storehouse as s3
 from file_storehouse.engine import EngineS3
+from file_storehouse.engine.base import EngineABC
+from file_storehouse.engine.local_file_system import EngineLocal
 from file_storehouse.key_mapping import KeyMappingNumeratedFile
 from file_storehouse.transformation import TransformationCodecs, TransformationJson
 
 
 @mark.skipif(platform != "linux", reason="just runs on linux for now")
-def test_acceptance(docker_services: Any) -> None:
-    """
-    User story for an end-to-end test.
-
-    Parameters
-    ----------
-    docker_services : Any
-        Test fixture used to start all services from a docker compose file.
-        After test are finished, shutdown all services.
-
-    """
-    s3_client = s3.client(
+def test_s3_engine(docker_services):
+    """S3 engine used to acceptance test."""
+    client = s3.client(
         "s3",
         endpoint_url="http://localhost:9000",
         aws_access_key_id="compose-s3-key",
         aws_secret_access_key="compose-s3-secret",
     )
 
-    s3_engine = EngineS3(
-        s3_client=s3_client,
+    engine = EngineS3(
+        s3_client=client,
         bucket_name="file-storehouse-s3",
         prefix="products",
     )
 
-    s3_engine.ensure_bucket()
+    engine.ensure_bucket()
 
+    run_acceptance(engine)
+
+
+def test_local_engine():
+    """Local engine used to acceptance test."""
+    with tempfile.TemporaryDirectory() as tmpdirname:
+        tmp_path = Path(tmpdirname)
+        engine = EngineLocal(tmp_path)
+        run_acceptance(engine)
+
+
+def run_acceptance(engine: EngineABC) -> None:
+    """User story for an end-to-end test."""
     s3_manager = s3.FileManager(
-        engine=s3_engine,
+        engine=engine,
         transformation_list=[
             TransformationCodecs(),
             TransformationJson(),

@@ -7,7 +7,7 @@ from typing import Iterator
 from botocore.client import BaseClient
 
 from file_storehouse.engine.base import EngineABC
-from file_storehouse.type import FileLike, PathLike
+from file_storehouse.type import PathLike
 
 
 @dataclass
@@ -22,7 +22,7 @@ class EngineS3Data:
 class EngineS3(EngineS3Data, EngineABC):
     """Engine for S3 buckets."""
 
-    def get_item(self, key: PathLike) -> FileLike:
+    def get_item(self, key: str) -> bytes:
         """Get the item related to the key."""
         try:
             response = self.s3_client.get_object(Bucket=self.bucket_name, Key=key)
@@ -31,7 +31,7 @@ class EngineS3(EngineS3Data, EngineABC):
 
         return response["Body"].read()
 
-    def set_item(self, key: PathLike, file_content: FileLike) -> None:
+    def set_item(self, key: str, file_content: bytes) -> None:
         """Set the item related to the key."""
         try:
             self.s3_client.put_object(
@@ -40,7 +40,7 @@ class EngineS3(EngineS3Data, EngineABC):
         except self.s3_client.exceptions.NoSuchKey:
             raise KeyError(f"No such {key=}")
 
-    def delete_item(self, key: PathLike) -> None:
+    def delete_item(self, key: str) -> None:
         """Delete the item related to the key."""
         try:
             self.s3_client.delete_object(Bucket=self.bucket_name, Key=key)

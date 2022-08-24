@@ -3,24 +3,24 @@
 from abc import ABC, abstractmethod
 from typing import Any, Iterator
 
-from ..type import FileLike, PathLike
+from ..type import PathLike
 
 
 class EngineABC(ABC):
     """Base for engine."""
 
     @abstractmethod
-    def get_item(self, key: PathLike) -> FileLike:
+    def get_item(self, key: Any) -> bytes:
         """Get the item related to the key."""
         pass
 
     @abstractmethod
-    def set_item(self, key: PathLike, file_content: FileLike) -> None:
+    def set_item(self, key: Any, file_content: bytes) -> None:
         """Set the item related to the key."""
         pass
 
     @abstractmethod
-    def delete_item(self, key: PathLike) -> None:
+    def delete_item(self, key: Any) -> None:
         """Delete the item related to the key."""
         pass
 
