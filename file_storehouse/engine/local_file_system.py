@@ -8,7 +8,7 @@ from file_storehouse.engine.base import EngineABC
 from file_storehouse.type import PathLike
 
 
-@dataclass
+@dataclass(frozen=True, eq=True)
 class EngineLocal(EngineABC):
     """Engine for the local file system."""
 
@@ -50,7 +50,6 @@ class EngineLocal(EngineABC):
         """Remove folders in the path that become empty."""
         rel_path = Path(key)
         while rel_path != self.base_path:
-            print()
             try:
                 rel_path.rmdir()
             except OSError:

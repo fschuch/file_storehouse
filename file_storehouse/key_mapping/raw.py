@@ -1,10 +1,12 @@
 """Raw key mapping."""
 
+from dataclasses import dataclass
 
 from file_storehouse.key_mapping.base import KeyMappingABC
 from file_storehouse.type import PathLike
 
 
+@dataclass(frozen=True, eq=True)
 class KeyMappingRaw(KeyMappingABC):
     """Raw key mapping."""
 

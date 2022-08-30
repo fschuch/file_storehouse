@@ -10,17 +10,13 @@ from file_storehouse.engine.base import EngineABC
 from file_storehouse.type import PathLike
 
 
-@dataclass
-class EngineS3Data:
-    """Class containing the properties of a S3 engine."""
+@dataclass(frozen=True, eq=True)
+class EngineS3(EngineABC):
+    """Engine for S3 buckets."""
 
     s3_client: BaseClient
     bucket_name: str
     prefix: str = ""
-
-
-class EngineS3(EngineS3Data, EngineABC):
-    """Engine for S3 buckets."""
 
     def get_item(self, key: str) -> bytes:
         """Get the item related to the key."""

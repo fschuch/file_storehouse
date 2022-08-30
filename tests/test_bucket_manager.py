@@ -4,8 +4,8 @@ from io import StringIO
 
 import pytest
 
-from file_storehouse import FileManagerReadOnly, Stubber, client
-from file_storehouse.engine import EngineS3
+from file_storehouse import EngineS3, FileManagerReadOnly
+from file_storehouse.extras import Stubber, client
 
 
 @pytest.fixture(scope="module")
