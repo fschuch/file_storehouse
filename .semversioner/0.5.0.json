@@ -1,0 +1,18 @@
+[
+  {
+    "description": "Make engines, key mappings, and transformations immutable objects",
+    "type": "minor"
+  },
+  {
+    "description": "Rename transformation_list to io_transformations (it is now a tuple)",
+    "type": "minor"
+  },
+  {
+    "description": "Enhance docstrings",
+    "type": "patch"
+  },
+  {
+    "description": "Refactor how package objects are imported at the __init__.py file",
+    "type": "patch"
+  }
+]

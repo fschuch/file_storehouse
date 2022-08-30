@@ -1,6 +1,13 @@
 # Changelog
 Note: version releases in the 0.x.y range may introduce breaking changes.
 
+## 0.5.0
+
+- minor: Make engines, key mappings, and transformations immutable objects
+- minor: Rename transformation_list to io_transformations (it is now a tuple)
+- patch: Enhance docstrings
+- patch: Refactor how package objects are imported at the __init__.py file
+
 ## 0.4.0
 
 - minor: Add a new engine to manage the local file system

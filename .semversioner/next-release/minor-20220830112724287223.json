@@ -1,4 +1,0 @@
-{
-  "type": "minor",
-  "description": "Make engines, key mappings, and transformations immutable objects"
-}
