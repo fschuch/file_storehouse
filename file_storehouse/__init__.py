@@ -1,12 +1,26 @@
 """File-storehouse package."""
 
-from .extras import Stubber, client
-from .file_manager.mapping import FileManagerReadOnly
-from .file_manager.mutable_mapping import FileManager
+from .engine import EngineABC, EngineLocal, EngineS3
+from .file_manager import FileManager, FileManagerReadOnly
+from .key_mapping import (
+    KeyMappingABC,
+    KeyMappingNumeratedFile,
+    KeyMappingNumeratedFolder,
+    KeyMappingRaw,
+)
+from .transformation import TransformationABC, TransformationCodecs, TransformationJson
 
 __all__ = [
-    "client",
-    "Stubber",
+    "EngineABC",
+    "EngineLocal",
+    "EngineS3",
     "FileManager",
     "FileManagerReadOnly",
+    "KeyMappingABC",
+    "KeyMappingRaw",
+    "KeyMappingNumeratedFile",
+    "KeyMappingNumeratedFolder",
+    "TransformationABC",
+    "TransformationCodecs",
+    "TransformationJson",
 ]

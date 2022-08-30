@@ -7,16 +7,12 @@ from typing import Any
 from file_storehouse.transformation.base import TransformationABC
 
 
-@dataclass
-class TransformationJsonData:
-    """Json data."""
+@dataclass(frozen=True, eq=True)
+class TransformationJson(TransformationABC):
+    """Support for json dump/load transformations."""
 
     dump_options: dict = field(default_factory=dict)
     load_options: dict = field(default_factory=dict)
-
-
-class TransformationJson(TransformationJsonData, TransformationABC):
-    """Support for json dump/load transformations."""
 
     def convert_from_engine_to_dict(self, file_content: Any) -> Any:
         """From engine to dict."""

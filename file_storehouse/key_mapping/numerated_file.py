@@ -7,15 +7,11 @@ from file_storehouse.key_mapping.base import KeyMappingABC
 from file_storehouse.type import PathLike
 
 
-@dataclass
-class KeyMappingNumeratedFileData:
-    """Data of the numerated key mapping."""
+@dataclass(frozen=True, eq=True)
+class KeyMappingNumeratedFile(KeyMappingABC):
+    """Numerated key mapping."""
 
     suffix: str
-
-
-class KeyMappingNumeratedFile(KeyMappingNumeratedFileData, KeyMappingABC):
-    """Numerated key mapping."""
 
     def get_dict_key_from_engine(self, engine_key: PathLike) -> int:
         """

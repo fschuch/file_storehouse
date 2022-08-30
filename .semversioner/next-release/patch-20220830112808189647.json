@@ -1,0 +1,4 @@
+{
+  "type": "patch",
+  "description": "Refactor how package objects are imported at the __init__.py file"
+}
