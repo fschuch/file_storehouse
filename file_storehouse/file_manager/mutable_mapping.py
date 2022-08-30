@@ -27,7 +27,6 @@ class FileManager(FileManagerReadOnly, MutableMapping):
 
     Notes
     -----
-
     For the ``Mapping`` protocol and read-only protection, see
     ``file_storehouse.FileManagerReadOnly``.
     """

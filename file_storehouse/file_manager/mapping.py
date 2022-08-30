@@ -32,7 +32,6 @@ class FileManagerReadOnly(Mapping):
 
     Notes
     -----
-
     For the ``MutableMapping`` protocol and writhing capabilities, see
     ``file_storehouse.FileManager``.
     """
