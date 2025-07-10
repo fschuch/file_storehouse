@@ -1,1 +1,1 @@
-"""Test module."""
+"""Test files for the project."""
