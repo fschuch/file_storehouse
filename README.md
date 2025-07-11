@@ -13,7 +13,9 @@ ______________________________________________________________________
   [![CI](https://github.com/fschuch/file_storehouse/actions/workflows/ci.yaml/badge.svg?branch=main)](https://github.com/fschuch/file_storehouse/actions/workflows/ci.yaml)
   [![CodeQL](https://github.com/fschuch/file_storehouse/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/fschuch/file_storehouse/actions/workflows/github-code-scanning/codeql)
   [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/fschuch/file_storehouse/main.svg)](https://results.pre-commit.ci/latest/github/fschuch/file_storehouse/main)
+  [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=fschuch_file_storehouse&metric=coverage)](https://sonarcloud.io/summary/new_code?id=fschuch_file_storehouse)
   [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=fschuch_file_storehouse&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=fschuch_file_storehouse)
+  [![CodeFactor](https://www.codefactor.io/repository/github/fschuch/file_storehouse/badge)](https://www.codefactor.io/repository/github/fschuch/file_storehouse)
 
 - Docs:
   [![Docs](https://github.com/fschuch/file_storehouse/actions/workflows/docs.yaml/badge.svg?branch=main)](https://docs.fschuch.com/file_storehouse)

@@ -53,6 +53,38 @@ jobs:
           name: coverage-${{ matrix.os }}-${{ matrix.python-version }}
           path: coverage.*.xml
 
+  sonarcloud:
+    needs: test
+    runs-on: ubuntu-latest
+    if: github.repository == 'fschuch/file_storehouse' # prevent running on forks
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+          fetch-depth: 0 # Shallow clones should be disabled for a better relevancy of analysis
+
+      - name: Download coverage data
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          pattern: coverage-*
+          merge-multiple: true
+
+      - name: SonarQube Scan
+        uses: SonarSource/sonarqube-scan-action@2500896589ef8f7247069a56136f8dc177c27ccf # v5.2.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        with:
+          args: >
+            -Dsonar.organization=fschuch
+            -Dsonar.projectKey=fschuch_file_storehouse
+            -Dsonar.python.version=3.9,3.10,3.11,3.12,3.13
+            -Dsonar.sources=src/file_storehouse
+            -Dsonar.tests=tests
+            -Dsonar.python.coverage.reportPaths=coverage.*.xml
+
   build:
     needs: test
     runs-on: ubuntu-latest
@@ -77,7 +109,9 @@ jobs:
           name: built-bdist
 
   release:
-    needs: build
+    needs:
+      - build
+      - sonarcloud
     # upload to PyPI on every tag and ensure it does not run on forks
     if: github.event_name == 'push' && github.ref_type == 'tag' && !github.event.pull_request.head.repo.fork
     runs-on: ubuntu-latest

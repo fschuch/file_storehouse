@@ -51,8 +51,8 @@ docs = [
 [project.urls]
 Source = "https://github.com/fschuch/file_storehouse"
 Tracker = "https://github.com/fschuch/file_storehouse/issues"
-Changelog = "https://fschuch.github.io/file_storehouse/references/what-is-new.html"
-Documentation = "https://fschuch.github.io/file_storehouse/"
+Changelog = "https://docs.fschuch.com/file_storehouse/references/what-is-new.html"
+Documentation = "https://docs.fschuch.com/file_storehouse/"
 
 [project.scripts]
 
