@@ -1,0 +1,787 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Index &#8212; File Storehouse</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'genindex';</script>
+    <link rel="index" title="Index" href="#" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="File Storehouse - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="File Storehouse - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/fschuch/file_storehouse/releases" title="Releases" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="https://img.shields.io/github/v/release/fschuch/file_storehouse?style=social" class="icon-link-image" alt="Releases"/></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/fschuch/file_storehouse/" title="Stars" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="https://img.shields.io/github/stars/fschuch/file_storehouse?style=social" class="icon-link-image" alt="Stars"/></a>
+        </li>
+</ul></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="getting-started/about.html">About</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">References</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="references/api-reference.html">API reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references/how-to-contribute.html">How to Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references/what-is-new.html">What’s New</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+
+<h1 id="index">Index</h1>
+
+<div class="genindex-jumpbox">
+ <a href="#_"><strong>_</strong></a>
+ | <a href="#A"><strong>A</strong></a>
+ | <a href="#C"><strong>C</strong></a>
+ | <a href="#D"><strong>D</strong></a>
+ | <a href="#E"><strong>E</strong></a>
+ | <a href="#F"><strong>F</strong></a>
+ | <a href="#G"><strong>G</strong></a>
+ | <a href="#K"><strong>K</strong></a>
+ | <a href="#L"><strong>L</strong></a>
+ | <a href="#M"><strong>M</strong></a>
+ | <a href="#S"><strong>S</strong></a>
+ | <a href="#T"><strong>T</strong></a>
+ 
+</div>
+<h2 id="_">_</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="references/api-reference.html#file_storehouse.engine.EngineLocal.__delattr__">__delattr__() (file_storehouse.engine.EngineLocal method)</a>
+
+      <ul>
+        <li><a href="references/api-reference.html#file_storehouse.engine.EngineS3.__delattr__">(file_storehouse.engine.EngineS3 method)</a>
+</li>
+        <li><a href="references/api-reference.html#file_storehouse.file_manager.FileManagerReadOnly.__delattr__">(file_storehouse.file_manager.FileManagerReadOnly method)</a>
+</li>
+        <li><a href="references/api-reference.html#file_storehouse.key_mapping.KeyMappingNumeratedFile.__delattr__">(file_storehouse.key_mapping.KeyMappingNumeratedFile method)</a>
+</li>
+        <li><a href="references/api-reference.html#file_storehouse.key_mapping.KeyMappingNumeratedFolder.__delattr__">(file_storehouse.key_mapping.KeyMappingNumeratedFolder method)</a>
+</li>
+        <li><a href="references/api-reference.html#file_storehouse.key_mapping.KeyMappingRaw.__delattr__">(file_storehouse.key_mapping.KeyMappingRaw method)</a>
+</li>
+        <li><a href="references/api-reference.html#file_storehouse.transformation.TransformationCodecs.__delattr__">(file_storehouse.transformation.TransformationCodecs method)</a>
+</li>
+        <li><a href="references/api-reference.html#file_storehouse.transformation.TransformationJson.__delattr__">(file_storehouse.transformation.TransformationJson method)</a>
+</li>
+      </ul></li>
+      <li><a href="references/api-reference.html#file_storehouse.file_manager.FileManager.__delitem__">__delitem__() (file_storehouse.file_manager.FileManager method)</a>
+</li>
+      <li><a href="references/api-reference.html#file_storehouse.engine.EngineLocal.__eq__">__eq__() (file_storehouse.engine.EngineLocal method)</a>
+
+      <ul>
+        <li><a href="references/api-reference.html#file_storehouse.engine.EngineS3.__eq__">(file_storehouse.engine.EngineS3 method)</a>
+</li>
+        <li><a href="references/api-reference.html#file_storehouse.key_mapping.KeyMappingNumeratedFile.__eq__">(file_storehouse.key_mapping.KeyMappingNumeratedFile method)</a>
+</li>
+        <li><a href="references/api-reference.html#file_storehouse.key_mapping.KeyMappingNumeratedFolder.__eq__">(file_storehouse.key_mapping.KeyMappingNumeratedFolder method)</a>
+</li>
+        <li><a href="references/api-reference.html#file_storehouse.key_mapping.KeyMappingRaw.__eq__">(file_storehouse.key_mapping.KeyMappingRaw method)</a>
+</li>
+        <li><a href="references/api-reference.html#file_storehouse.transformation.TransformationCodecs.__eq__">(file_storehouse.transformation.TransformationCodecs method)</a>
+</li>
+        <li><a href="references/api-reference.html#file_storehouse.transformation.TransformationJson.__eq__">(file_storehouse.transformation.TransformationJson method)</a>
+</li>
+      </ul></li>
+      <li><a href="references/api-reference.html#file_storehouse.file_manager.FileManagerReadOnly.__getitem__">__getitem__() (file_storehouse.file_manager.FileManagerReadOnly method)</a>
+</li>
+      <li><a href="references/api-reference.html#file_storehouse.engine.EngineLocal.__hash__">__hash__() (file_storehouse.engine.EngineLocal method)</a>
+
+      <ul>
+        <li><a href="references/api-reference.html#file_storehouse.engine.EngineS3.__hash__">(file_storehouse.engine.EngineS3 method)</a>
+</li>
+        <li><a href="references/api-reference.html#file_storehouse.key_mapping.KeyMappingNumeratedFile.__hash__">(file_storehouse.key_mapping.KeyMappingNumeratedFile method)</a>
+</li>
+        <li><a href="references/api-reference.html#file_storehouse.key_mapping.KeyMappingNumeratedFolder.__hash__">(file_storehouse.key_mapping.KeyMappingNumeratedFolder method)</a>
+</li>
+        <li><a href="references/api-reference.html#file_storehouse.key_mapping.KeyMappingRaw.__hash__">(file_storehouse.key_mapping.KeyMappingRaw method)</a>
+</li>
+        <li><a href="references/api-reference.html#file_storehouse.transformation.TransformationCodecs.__hash__">(file_storehouse.transformation.TransformationCodecs method)</a>
+</li>
+        <li><a href="references/api-reference.html#file_storehouse.transformation.TransformationJson.__hash__">(file_storehouse.transformation.TransformationJson method)</a>
+</li>
+      </ul></li>
+      <li><a href="references/api-reference.html#file_storehouse.engine.EngineLocal.__init__">__init__() (file_storehouse.engine.EngineLocal method)</a>
+
+      <ul>
+        <li><a href="references/api-reference.html#file_storehouse.engine.EngineS3.__init__">(file_storehouse.engine.EngineS3 method)</a>
+</li>
+        <li><a href="references/api-reference.html#file_storehouse.extras.Stubber.__init__">(file_storehouse.extras.Stubber method)</a>
+</li>
+        <li><a href="references/api-reference.html#file_storehouse.file_manager.FileManagerReadOnly.__init__">(file_storehouse.file_manager.FileManagerReadOnly method)</a>
+</li>
+        <li><a href="references/api-reference.html#file_storehouse.key_mapping.KeyMappingNumeratedFile.__init__">(file_storehouse.key_mapping.KeyMappingNumeratedFile method)</a>
+</li>
+        <li><a href="references/api-reference.html#file_storehouse.key_mapping.KeyMappingNumeratedFolder.__init__">(file_storehouse.key_mapping.KeyMappingNumeratedFolder method)</a>
+</li>
+        <li><a href="references/api-reference.html#file_storehouse.key_mapping.KeyMappingRaw.__init__">(file_storehouse.key_mapping.KeyMappingRaw method)</a>
+</li>
+        <li><a href="references/api-reference.html#file_storehouse.transformation.TransformationCodecs.__init__">(file_storehouse.transformation.TransformationCodecs method)</a>
+</li>
+        <li><a href="references/api-reference.html#file_storehouse.transformation.TransformationJson.__init__">(file_storehouse.transformation.TransformationJson method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="references/api-reference.html#file_storehouse.file_manager.FileManagerReadOnly.__iter__">__iter__() (file_storehouse.file_manager.FileManagerReadOnly method)</a>
+</li>
+      <li><a href="references/api-reference.html#file_storehouse.file_manager.FileManagerReadOnly.__len__">__len__() (file_storehouse.file_manager.FileManagerReadOnly method)</a>
+</li>
+      <li><a href="references/api-reference.html#file_storehouse.engine.EngineLocal.__repr__">__repr__() (file_storehouse.engine.EngineLocal method)</a>
+
+      <ul>
+        <li><a href="references/api-reference.html#file_storehouse.engine.EngineS3.__repr__">(file_storehouse.engine.EngineS3 method)</a>
+</li>
+        <li><a href="references/api-reference.html#file_storehouse.file_manager.FileManagerReadOnly.__repr__">(file_storehouse.file_manager.FileManagerReadOnly method)</a>
+</li>
+        <li><a href="references/api-reference.html#file_storehouse.key_mapping.KeyMappingNumeratedFile.__repr__">(file_storehouse.key_mapping.KeyMappingNumeratedFile method)</a>
+</li>
+        <li><a href="references/api-reference.html#file_storehouse.key_mapping.KeyMappingNumeratedFolder.__repr__">(file_storehouse.key_mapping.KeyMappingNumeratedFolder method)</a>
+</li>
+        <li><a href="references/api-reference.html#file_storehouse.key_mapping.KeyMappingRaw.__repr__">(file_storehouse.key_mapping.KeyMappingRaw method)</a>
+</li>
+        <li><a href="references/api-reference.html#file_storehouse.transformation.TransformationCodecs.__repr__">(file_storehouse.transformation.TransformationCodecs method)</a>
+</li>
+        <li><a href="references/api-reference.html#file_storehouse.transformation.TransformationJson.__repr__">(file_storehouse.transformation.TransformationJson method)</a>
+</li>
+      </ul></li>
+      <li><a href="references/api-reference.html#file_storehouse.engine.EngineLocal.__setattr__">__setattr__() (file_storehouse.engine.EngineLocal method)</a>
+
+      <ul>
+        <li><a href="references/api-reference.html#file_storehouse.engine.EngineS3.__setattr__">(file_storehouse.engine.EngineS3 method)</a>
+</li>
+        <li><a href="references/api-reference.html#file_storehouse.file_manager.FileManagerReadOnly.__setattr__">(file_storehouse.file_manager.FileManagerReadOnly method)</a>
+</li>
+        <li><a href="references/api-reference.html#file_storehouse.key_mapping.KeyMappingNumeratedFile.__setattr__">(file_storehouse.key_mapping.KeyMappingNumeratedFile method)</a>
+</li>
+        <li><a href="references/api-reference.html#file_storehouse.key_mapping.KeyMappingNumeratedFolder.__setattr__">(file_storehouse.key_mapping.KeyMappingNumeratedFolder method)</a>
+</li>
+        <li><a href="references/api-reference.html#file_storehouse.key_mapping.KeyMappingRaw.__setattr__">(file_storehouse.key_mapping.KeyMappingRaw method)</a>
+</li>
+        <li><a href="references/api-reference.html#file_storehouse.transformation.TransformationCodecs.__setattr__">(file_storehouse.transformation.TransformationCodecs method)</a>
+</li>
+        <li><a href="references/api-reference.html#file_storehouse.transformation.TransformationJson.__setattr__">(file_storehouse.transformation.TransformationJson method)</a>
+</li>
+      </ul></li>
+      <li><a href="references/api-reference.html#file_storehouse.file_manager.FileManager.__setitem__">__setitem__() (file_storehouse.file_manager.FileManager method)</a>
+</li>
+      <li><a href="references/api-reference.html#file_storehouse.engine.EngineABC.__weakref__">__weakref__ (file_storehouse.engine.EngineABC attribute)</a>
+
+      <ul>
+        <li><a href="references/api-reference.html#file_storehouse.extras.Stubber.__weakref__">(file_storehouse.extras.Stubber attribute)</a>
+</li>
+        <li><a href="references/api-reference.html#file_storehouse.file_manager.FileManagerReadOnly.__weakref__">(file_storehouse.file_manager.FileManagerReadOnly attribute)</a>
+</li>
+        <li><a href="references/api-reference.html#file_storehouse.key_mapping.KeyMappingABC.__weakref__">(file_storehouse.key_mapping.KeyMappingABC attribute)</a>
+</li>
+        <li><a href="references/api-reference.html#file_storehouse.transformation.TransformationABC.__weakref__">(file_storehouse.transformation.TransformationABC attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="A">A</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="references/api-reference.html#file_storehouse.extras.Stubber.activate">activate() (file_storehouse.extras.Stubber method)</a>
+</li>
+      <li><a href="references/api-reference.html#file_storehouse.extras.Stubber.add_client_error">add_client_error() (file_storehouse.extras.Stubber method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="references/api-reference.html#file_storehouse.extras.Stubber.add_response">add_response() (file_storehouse.extras.Stubber method)</a>
+</li>
+      <li><a href="references/api-reference.html#file_storehouse.extras.Stubber.assert_no_pending_responses">assert_no_pending_responses() (file_storehouse.extras.Stubber method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="C">C</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="references/api-reference.html#file_storehouse.extras.client">client() (in module file_storehouse.extras)</a>
+</li>
+      <li><a href="references/api-reference.html#file_storehouse.transformation.TransformationABC.convert_from_dict_to_engine">convert_from_dict_to_engine() (file_storehouse.transformation.TransformationABC method)</a>
+
+      <ul>
+        <li><a href="references/api-reference.html#file_storehouse.transformation.TransformationCodecs.convert_from_dict_to_engine">(file_storehouse.transformation.TransformationCodecs method)</a>
+</li>
+        <li><a href="references/api-reference.html#file_storehouse.transformation.TransformationJson.convert_from_dict_to_engine">(file_storehouse.transformation.TransformationJson method)</a>
+</li>
+      </ul></li>
+      <li><a href="references/api-reference.html#file_storehouse.transformation.TransformationABC.convert_from_engine_to_dict">convert_from_engine_to_dict() (file_storehouse.transformation.TransformationABC method)</a>
+
+      <ul>
+        <li><a href="references/api-reference.html#file_storehouse.transformation.TransformationCodecs.convert_from_engine_to_dict">(file_storehouse.transformation.TransformationCodecs method)</a>
+</li>
+        <li><a href="references/api-reference.html#file_storehouse.transformation.TransformationJson.convert_from_engine_to_dict">(file_storehouse.transformation.TransformationJson method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="references/api-reference.html#file_storehouse.engine.EngineABC.convert_to_absolute_path">convert_to_absolute_path() (file_storehouse.engine.EngineABC method)</a>
+
+      <ul>
+        <li><a href="references/api-reference.html#file_storehouse.engine.EngineLocal.convert_to_absolute_path">(file_storehouse.engine.EngineLocal method)</a>
+</li>
+        <li><a href="references/api-reference.html#file_storehouse.engine.EngineS3.convert_to_absolute_path">(file_storehouse.engine.EngineS3 method)</a>
+</li>
+      </ul></li>
+      <li><a href="references/api-reference.html#file_storehouse.engine.EngineABC.convert_to_relative_path">convert_to_relative_path() (file_storehouse.engine.EngineABC method)</a>
+
+      <ul>
+        <li><a href="references/api-reference.html#file_storehouse.engine.EngineLocal.convert_to_relative_path">(file_storehouse.engine.EngineLocal method)</a>
+</li>
+        <li><a href="references/api-reference.html#file_storehouse.engine.EngineS3.convert_to_relative_path">(file_storehouse.engine.EngineS3 method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="D">D</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="references/api-reference.html#file_storehouse.extras.Stubber.deactivate">deactivate() (file_storehouse.extras.Stubber method)</a>
+</li>
+      <li><a href="references/api-reference.html#file_storehouse.engine.EngineABC.delete_item">delete_item() (file_storehouse.engine.EngineABC method)</a>
+
+      <ul>
+        <li><a href="references/api-reference.html#file_storehouse.engine.EngineLocal.delete_item">(file_storehouse.engine.EngineLocal method)</a>
+</li>
+        <li><a href="references/api-reference.html#file_storehouse.engine.EngineS3.delete_item">(file_storehouse.engine.EngineS3 method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="E">E</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="references/api-reference.html#file_storehouse.engine.EngineABC">EngineABC (class in file_storehouse.engine)</a>
+</li>
+      <li><a href="references/api-reference.html#file_storehouse.engine.EngineLocal">EngineLocal (class in file_storehouse.engine)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="references/api-reference.html#file_storehouse.engine.EngineS3">EngineS3 (class in file_storehouse.engine)</a>
+</li>
+      <li><a href="references/api-reference.html#file_storehouse.engine.EngineS3.ensure_bucket">ensure_bucket() (file_storehouse.engine.EngineS3 method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="F">F</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    file_storehouse.engine
+
+      <ul>
+        <li><a href="references/api-reference.html#module-file_storehouse.engine">module</a>
+</li>
+      </ul></li>
+      <li>
+    file_storehouse.extras
+
+      <ul>
+        <li><a href="references/api-reference.html#module-file_storehouse.extras">module</a>
+</li>
+      </ul></li>
+      <li>
+    file_storehouse.file_manager
+
+      <ul>
+        <li><a href="references/api-reference.html#module-file_storehouse.file_manager">module</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    file_storehouse.key_mapping
+
+      <ul>
+        <li><a href="references/api-reference.html#module-file_storehouse.key_mapping">module</a>
+</li>
+      </ul></li>
+      <li>
+    file_storehouse.transformation
+
+      <ul>
+        <li><a href="references/api-reference.html#module-file_storehouse.transformation">module</a>
+</li>
+      </ul></li>
+      <li><a href="references/api-reference.html#file_storehouse.file_manager.FileManager">FileManager (class in file_storehouse.file_manager)</a>
+</li>
+      <li><a href="references/api-reference.html#file_storehouse.file_manager.FileManagerReadOnly">FileManagerReadOnly (class in file_storehouse.file_manager)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="G">G</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="references/api-reference.html#file_storehouse.key_mapping.KeyMappingABC.get_dict_key_from_engine">get_dict_key_from_engine() (file_storehouse.key_mapping.KeyMappingABC method)</a>
+
+      <ul>
+        <li><a href="references/api-reference.html#file_storehouse.key_mapping.KeyMappingNumeratedFile.get_dict_key_from_engine">(file_storehouse.key_mapping.KeyMappingNumeratedFile method)</a>
+</li>
+        <li><a href="references/api-reference.html#file_storehouse.key_mapping.KeyMappingNumeratedFolder.get_dict_key_from_engine">(file_storehouse.key_mapping.KeyMappingNumeratedFolder method)</a>
+</li>
+        <li><a href="references/api-reference.html#file_storehouse.key_mapping.KeyMappingRaw.get_dict_key_from_engine">(file_storehouse.key_mapping.KeyMappingRaw method)</a>
+</li>
+      </ul></li>
+      <li><a href="references/api-reference.html#file_storehouse.key_mapping.KeyMappingABC.get_engine_key_from_dict">get_engine_key_from_dict() (file_storehouse.key_mapping.KeyMappingABC method)</a>
+
+      <ul>
+        <li><a href="references/api-reference.html#file_storehouse.key_mapping.KeyMappingNumeratedFile.get_engine_key_from_dict">(file_storehouse.key_mapping.KeyMappingNumeratedFile method)</a>
+</li>
+        <li><a href="references/api-reference.html#file_storehouse.key_mapping.KeyMappingNumeratedFolder.get_engine_key_from_dict">(file_storehouse.key_mapping.KeyMappingNumeratedFolder method)</a>
+</li>
+        <li><a href="references/api-reference.html#file_storehouse.key_mapping.KeyMappingRaw.get_engine_key_from_dict">(file_storehouse.key_mapping.KeyMappingRaw method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="references/api-reference.html#file_storehouse.engine.EngineABC.get_item">get_item() (file_storehouse.engine.EngineABC method)</a>
+
+      <ul>
+        <li><a href="references/api-reference.html#file_storehouse.engine.EngineLocal.get_item">(file_storehouse.engine.EngineLocal method)</a>
+</li>
+        <li><a href="references/api-reference.html#file_storehouse.engine.EngineS3.get_item">(file_storehouse.engine.EngineS3 method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="K">K</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="references/api-reference.html#file_storehouse.key_mapping.KeyMappingABC">KeyMappingABC (class in file_storehouse.key_mapping)</a>
+</li>
+      <li><a href="references/api-reference.html#file_storehouse.key_mapping.KeyMappingNumeratedFile">KeyMappingNumeratedFile (class in file_storehouse.key_mapping)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="references/api-reference.html#file_storehouse.key_mapping.KeyMappingNumeratedFolder">KeyMappingNumeratedFolder (class in file_storehouse.key_mapping)</a>
+</li>
+      <li><a href="references/api-reference.html#file_storehouse.key_mapping.KeyMappingRaw">KeyMappingRaw (class in file_storehouse.key_mapping)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="L">L</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="references/api-reference.html#file_storehouse.engine.EngineABC.list_keys">list_keys() (file_storehouse.engine.EngineABC method)</a>
+
+      <ul>
+        <li><a href="references/api-reference.html#file_storehouse.engine.EngineLocal.list_keys">(file_storehouse.engine.EngineLocal method)</a>
+</li>
+        <li><a href="references/api-reference.html#file_storehouse.engine.EngineS3.list_keys">(file_storehouse.engine.EngineS3 method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="M">M</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    module
+
+      <ul>
+        <li><a href="references/api-reference.html#module-file_storehouse.engine">file_storehouse.engine</a>
+</li>
+        <li><a href="references/api-reference.html#module-file_storehouse.extras">file_storehouse.extras</a>
+</li>
+        <li><a href="references/api-reference.html#module-file_storehouse.file_manager">file_storehouse.file_manager</a>
+</li>
+        <li><a href="references/api-reference.html#module-file_storehouse.key_mapping">file_storehouse.key_mapping</a>
+</li>
+        <li><a href="references/api-reference.html#module-file_storehouse.transformation">file_storehouse.transformation</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="S">S</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="references/api-reference.html#file_storehouse.engine.EngineABC.set_item">set_item() (file_storehouse.engine.EngineABC method)</a>
+
+      <ul>
+        <li><a href="references/api-reference.html#file_storehouse.engine.EngineLocal.set_item">(file_storehouse.engine.EngineLocal method)</a>
+</li>
+        <li><a href="references/api-reference.html#file_storehouse.engine.EngineS3.set_item">(file_storehouse.engine.EngineS3 method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="references/api-reference.html#file_storehouse.extras.Stubber">Stubber (class in file_storehouse.extras)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="T">T</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="references/api-reference.html#file_storehouse.transformation.TransformationABC">TransformationABC (class in file_storehouse.transformation)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="references/api-reference.html#file_storehouse.transformation.TransformationCodecs">TransformationCodecs (class in file_storehouse.transformation)</a>
+</li>
+      <li><a href="references/api-reference.html#file_storehouse.transformation.TransformationJson">TransformationJson (class in file_storehouse.transformation)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Felipe N. Schuch
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

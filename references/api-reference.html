@@ -1,0 +1,1769 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>API reference &#8212; File Storehouse</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'references/api-reference';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="How to Contribute" href="how-to-contribute.html" />
+    <link rel="prev" title="About" href="../getting-started/about.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="File Storehouse - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="File Storehouse - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/fschuch/file_storehouse/releases" title="Releases" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="https://img.shields.io/github/v/release/fschuch/file_storehouse?style=social" class="icon-link-image" alt="Releases"/></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/fschuch/file_storehouse/" title="Stars" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="https://img.shields.io/github/stars/fschuch/file_storehouse?style=social" class="icon-link-image" alt="Stars"/></a>
+        </li>
+</ul></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/about.html">About</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">References</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">API reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how-to-contribute.html">How to Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="what-is-new.html">What’s New</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/references/api-reference.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>API reference</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-file_storehouse.file_manager">File managers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.file_manager.FileManager"><code class="docutils literal notranslate"><span class="pre">FileManager</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.file_manager.FileManager.__delitem__"><code class="docutils literal notranslate"><span class="pre">FileManager.__delitem__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.file_manager.FileManager.__setitem__"><code class="docutils literal notranslate"><span class="pre">FileManager.__setitem__()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.file_manager.FileManagerReadOnly"><code class="docutils literal notranslate"><span class="pre">FileManagerReadOnly</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.file_manager.FileManagerReadOnly.__delattr__"><code class="docutils literal notranslate"><span class="pre">FileManagerReadOnly.__delattr__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.file_manager.FileManagerReadOnly.__getitem__"><code class="docutils literal notranslate"><span class="pre">FileManagerReadOnly.__getitem__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.file_manager.FileManagerReadOnly.__init__"><code class="docutils literal notranslate"><span class="pre">FileManagerReadOnly.__init__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.file_manager.FileManagerReadOnly.__iter__"><code class="docutils literal notranslate"><span class="pre">FileManagerReadOnly.__iter__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.file_manager.FileManagerReadOnly.__len__"><code class="docutils literal notranslate"><span class="pre">FileManagerReadOnly.__len__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.file_manager.FileManagerReadOnly.__repr__"><code class="docutils literal notranslate"><span class="pre">FileManagerReadOnly.__repr__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.file_manager.FileManagerReadOnly.__setattr__"><code class="docutils literal notranslate"><span class="pre">FileManagerReadOnly.__setattr__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.file_manager.FileManagerReadOnly.__weakref__"><code class="docutils literal notranslate"><span class="pre">FileManagerReadOnly.__weakref__</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-file_storehouse.key_mapping">Key mapping</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.key_mapping.KeyMappingABC"><code class="docutils literal notranslate"><span class="pre">KeyMappingABC</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.key_mapping.KeyMappingABC.__weakref__"><code class="docutils literal notranslate"><span class="pre">KeyMappingABC.__weakref__</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.key_mapping.KeyMappingABC.get_dict_key_from_engine"><code class="docutils literal notranslate"><span class="pre">KeyMappingABC.get_dict_key_from_engine()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.key_mapping.KeyMappingABC.get_engine_key_from_dict"><code class="docutils literal notranslate"><span class="pre">KeyMappingABC.get_engine_key_from_dict()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.key_mapping.KeyMappingNumeratedFile"><code class="docutils literal notranslate"><span class="pre">KeyMappingNumeratedFile</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.key_mapping.KeyMappingNumeratedFile.__delattr__"><code class="docutils literal notranslate"><span class="pre">KeyMappingNumeratedFile.__delattr__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.key_mapping.KeyMappingNumeratedFile.__eq__"><code class="docutils literal notranslate"><span class="pre">KeyMappingNumeratedFile.__eq__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.key_mapping.KeyMappingNumeratedFile.__hash__"><code class="docutils literal notranslate"><span class="pre">KeyMappingNumeratedFile.__hash__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.key_mapping.KeyMappingNumeratedFile.__init__"><code class="docutils literal notranslate"><span class="pre">KeyMappingNumeratedFile.__init__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.key_mapping.KeyMappingNumeratedFile.__repr__"><code class="docutils literal notranslate"><span class="pre">KeyMappingNumeratedFile.__repr__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.key_mapping.KeyMappingNumeratedFile.__setattr__"><code class="docutils literal notranslate"><span class="pre">KeyMappingNumeratedFile.__setattr__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.key_mapping.KeyMappingNumeratedFile.get_dict_key_from_engine"><code class="docutils literal notranslate"><span class="pre">KeyMappingNumeratedFile.get_dict_key_from_engine()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.key_mapping.KeyMappingNumeratedFile.get_engine_key_from_dict"><code class="docutils literal notranslate"><span class="pre">KeyMappingNumeratedFile.get_engine_key_from_dict()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.key_mapping.KeyMappingNumeratedFolder"><code class="docutils literal notranslate"><span class="pre">KeyMappingNumeratedFolder</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.key_mapping.KeyMappingNumeratedFolder.__delattr__"><code class="docutils literal notranslate"><span class="pre">KeyMappingNumeratedFolder.__delattr__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.key_mapping.KeyMappingNumeratedFolder.__eq__"><code class="docutils literal notranslate"><span class="pre">KeyMappingNumeratedFolder.__eq__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.key_mapping.KeyMappingNumeratedFolder.__hash__"><code class="docutils literal notranslate"><span class="pre">KeyMappingNumeratedFolder.__hash__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.key_mapping.KeyMappingNumeratedFolder.__init__"><code class="docutils literal notranslate"><span class="pre">KeyMappingNumeratedFolder.__init__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.key_mapping.KeyMappingNumeratedFolder.__repr__"><code class="docutils literal notranslate"><span class="pre">KeyMappingNumeratedFolder.__repr__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.key_mapping.KeyMappingNumeratedFolder.__setattr__"><code class="docutils literal notranslate"><span class="pre">KeyMappingNumeratedFolder.__setattr__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.key_mapping.KeyMappingNumeratedFolder.get_dict_key_from_engine"><code class="docutils literal notranslate"><span class="pre">KeyMappingNumeratedFolder.get_dict_key_from_engine()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.key_mapping.KeyMappingNumeratedFolder.get_engine_key_from_dict"><code class="docutils literal notranslate"><span class="pre">KeyMappingNumeratedFolder.get_engine_key_from_dict()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.key_mapping.KeyMappingRaw"><code class="docutils literal notranslate"><span class="pre">KeyMappingRaw</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.key_mapping.KeyMappingRaw.__delattr__"><code class="docutils literal notranslate"><span class="pre">KeyMappingRaw.__delattr__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.key_mapping.KeyMappingRaw.__eq__"><code class="docutils literal notranslate"><span class="pre">KeyMappingRaw.__eq__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.key_mapping.KeyMappingRaw.__hash__"><code class="docutils literal notranslate"><span class="pre">KeyMappingRaw.__hash__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.key_mapping.KeyMappingRaw.__init__"><code class="docutils literal notranslate"><span class="pre">KeyMappingRaw.__init__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.key_mapping.KeyMappingRaw.__repr__"><code class="docutils literal notranslate"><span class="pre">KeyMappingRaw.__repr__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.key_mapping.KeyMappingRaw.__setattr__"><code class="docutils literal notranslate"><span class="pre">KeyMappingRaw.__setattr__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.key_mapping.KeyMappingRaw.get_dict_key_from_engine"><code class="docutils literal notranslate"><span class="pre">KeyMappingRaw.get_dict_key_from_engine()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.key_mapping.KeyMappingRaw.get_engine_key_from_dict"><code class="docutils literal notranslate"><span class="pre">KeyMappingRaw.get_engine_key_from_dict()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-file_storehouse.transformation">Transformations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.transformation.TransformationABC"><code class="docutils literal notranslate"><span class="pre">TransformationABC</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.transformation.TransformationABC.__weakref__"><code class="docutils literal notranslate"><span class="pre">TransformationABC.__weakref__</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.transformation.TransformationABC.convert_from_dict_to_engine"><code class="docutils literal notranslate"><span class="pre">TransformationABC.convert_from_dict_to_engine()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.transformation.TransformationABC.convert_from_engine_to_dict"><code class="docutils literal notranslate"><span class="pre">TransformationABC.convert_from_engine_to_dict()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.transformation.TransformationCodecs"><code class="docutils literal notranslate"><span class="pre">TransformationCodecs</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.transformation.TransformationCodecs.__delattr__"><code class="docutils literal notranslate"><span class="pre">TransformationCodecs.__delattr__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.transformation.TransformationCodecs.__eq__"><code class="docutils literal notranslate"><span class="pre">TransformationCodecs.__eq__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.transformation.TransformationCodecs.__hash__"><code class="docutils literal notranslate"><span class="pre">TransformationCodecs.__hash__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.transformation.TransformationCodecs.__init__"><code class="docutils literal notranslate"><span class="pre">TransformationCodecs.__init__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.transformation.TransformationCodecs.__repr__"><code class="docutils literal notranslate"><span class="pre">TransformationCodecs.__repr__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.transformation.TransformationCodecs.__setattr__"><code class="docutils literal notranslate"><span class="pre">TransformationCodecs.__setattr__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.transformation.TransformationCodecs.convert_from_dict_to_engine"><code class="docutils literal notranslate"><span class="pre">TransformationCodecs.convert_from_dict_to_engine()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.transformation.TransformationCodecs.convert_from_engine_to_dict"><code class="docutils literal notranslate"><span class="pre">TransformationCodecs.convert_from_engine_to_dict()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.transformation.TransformationJson"><code class="docutils literal notranslate"><span class="pre">TransformationJson</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.transformation.TransformationJson.__delattr__"><code class="docutils literal notranslate"><span class="pre">TransformationJson.__delattr__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.transformation.TransformationJson.__eq__"><code class="docutils literal notranslate"><span class="pre">TransformationJson.__eq__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.transformation.TransformationJson.__hash__"><code class="docutils literal notranslate"><span class="pre">TransformationJson.__hash__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.transformation.TransformationJson.__init__"><code class="docutils literal notranslate"><span class="pre">TransformationJson.__init__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.transformation.TransformationJson.__repr__"><code class="docutils literal notranslate"><span class="pre">TransformationJson.__repr__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.transformation.TransformationJson.__setattr__"><code class="docutils literal notranslate"><span class="pre">TransformationJson.__setattr__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.transformation.TransformationJson.convert_from_dict_to_engine"><code class="docutils literal notranslate"><span class="pre">TransformationJson.convert_from_dict_to_engine()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.transformation.TransformationJson.convert_from_engine_to_dict"><code class="docutils literal notranslate"><span class="pre">TransformationJson.convert_from_engine_to_dict()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-file_storehouse.engine">Engines</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineABC"><code class="docutils literal notranslate"><span class="pre">EngineABC</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineABC.__weakref__"><code class="docutils literal notranslate"><span class="pre">EngineABC.__weakref__</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineABC.convert_to_absolute_path"><code class="docutils literal notranslate"><span class="pre">EngineABC.convert_to_absolute_path()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineABC.convert_to_relative_path"><code class="docutils literal notranslate"><span class="pre">EngineABC.convert_to_relative_path()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineABC.delete_item"><code class="docutils literal notranslate"><span class="pre">EngineABC.delete_item()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineABC.get_item"><code class="docutils literal notranslate"><span class="pre">EngineABC.get_item()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineABC.list_keys"><code class="docutils literal notranslate"><span class="pre">EngineABC.list_keys()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineABC.set_item"><code class="docutils literal notranslate"><span class="pre">EngineABC.set_item()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineLocal"><code class="docutils literal notranslate"><span class="pre">EngineLocal</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineLocal.__delattr__"><code class="docutils literal notranslate"><span class="pre">EngineLocal.__delattr__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineLocal.__eq__"><code class="docutils literal notranslate"><span class="pre">EngineLocal.__eq__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineLocal.__hash__"><code class="docutils literal notranslate"><span class="pre">EngineLocal.__hash__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineLocal.__init__"><code class="docutils literal notranslate"><span class="pre">EngineLocal.__init__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineLocal.__repr__"><code class="docutils literal notranslate"><span class="pre">EngineLocal.__repr__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineLocal.__setattr__"><code class="docutils literal notranslate"><span class="pre">EngineLocal.__setattr__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineLocal.convert_to_absolute_path"><code class="docutils literal notranslate"><span class="pre">EngineLocal.convert_to_absolute_path()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineLocal.convert_to_relative_path"><code class="docutils literal notranslate"><span class="pre">EngineLocal.convert_to_relative_path()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineLocal.delete_item"><code class="docutils literal notranslate"><span class="pre">EngineLocal.delete_item()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineLocal.get_item"><code class="docutils literal notranslate"><span class="pre">EngineLocal.get_item()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineLocal.list_keys"><code class="docutils literal notranslate"><span class="pre">EngineLocal.list_keys()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineLocal.set_item"><code class="docutils literal notranslate"><span class="pre">EngineLocal.set_item()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineS3"><code class="docutils literal notranslate"><span class="pre">EngineS3</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineS3.__delattr__"><code class="docutils literal notranslate"><span class="pre">EngineS3.__delattr__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineS3.__eq__"><code class="docutils literal notranslate"><span class="pre">EngineS3.__eq__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineS3.__hash__"><code class="docutils literal notranslate"><span class="pre">EngineS3.__hash__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineS3.__init__"><code class="docutils literal notranslate"><span class="pre">EngineS3.__init__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineS3.__repr__"><code class="docutils literal notranslate"><span class="pre">EngineS3.__repr__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineS3.__setattr__"><code class="docutils literal notranslate"><span class="pre">EngineS3.__setattr__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineS3.convert_to_absolute_path"><code class="docutils literal notranslate"><span class="pre">EngineS3.convert_to_absolute_path()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineS3.convert_to_relative_path"><code class="docutils literal notranslate"><span class="pre">EngineS3.convert_to_relative_path()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineS3.delete_item"><code class="docutils literal notranslate"><span class="pre">EngineS3.delete_item()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineS3.ensure_bucket"><code class="docutils literal notranslate"><span class="pre">EngineS3.ensure_bucket()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineS3.get_item"><code class="docutils literal notranslate"><span class="pre">EngineS3.get_item()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineS3.list_keys"><code class="docutils literal notranslate"><span class="pre">EngineS3.list_keys()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineS3.set_item"><code class="docutils literal notranslate"><span class="pre">EngineS3.set_item()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-file_storehouse.extras">Extras</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.extras.Stubber"><code class="docutils literal notranslate"><span class="pre">Stubber</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.extras.Stubber.__init__"><code class="docutils literal notranslate"><span class="pre">Stubber.__init__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.extras.Stubber.__weakref__"><code class="docutils literal notranslate"><span class="pre">Stubber.__weakref__</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.extras.Stubber.activate"><code class="docutils literal notranslate"><span class="pre">Stubber.activate()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.extras.Stubber.add_client_error"><code class="docutils literal notranslate"><span class="pre">Stubber.add_client_error()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.extras.Stubber.add_response"><code class="docutils literal notranslate"><span class="pre">Stubber.add_response()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.extras.Stubber.assert_no_pending_responses"><code class="docutils literal notranslate"><span class="pre">Stubber.assert_no_pending_responses()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.extras.Stubber.deactivate"><code class="docutils literal notranslate"><span class="pre">Stubber.deactivate()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.extras.client"><code class="docutils literal notranslate"><span class="pre">client()</span></code></a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="api-reference">
+<h1>API reference<a class="headerlink" href="#api-reference" title="Link to this heading">#</a></h1>
+<section id="module-file_storehouse.file_manager">
+<span id="file-managers"></span><h2>File managers<a class="headerlink" href="#module-file_storehouse.file_manager" title="Link to this heading">#</a></h2>
+<p>File manager.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="file_storehouse.file_manager.FileManager">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">file_storehouse.file_manager.</span></span><span class="sig-name descname"><span class="pre">FileManager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">engine:</span> <span class="pre">~file_storehouse.engine.base.EngineABC</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">io_transformations:</span> <span class="pre">~typing.Tuple[~file_storehouse.transformation.base.TransformationABC</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">...]</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key_mapping:</span> <span class="pre">~file_storehouse.key_mapping.base.KeyMappingABC</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#file_storehouse.file_manager.FileManager" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#file_storehouse.file_manager.FileManagerReadOnly" title="file_storehouse.file_manager.mapping.FileManagerReadOnly"><code class="xref py py-class docutils literal notranslate"><span class="pre">FileManagerReadOnly</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.MutableMapping" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">MutableMapping</span></code></a></p>
+<p>File manager with read and write access.</p>
+<p>It implements the <code class="docutils literal notranslate"><span class="pre">MutableMapping</span></code> protocol, alloying the users to access files
+using a friendly dict-like interface.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>engine</strong> (<a class="reference internal" href="#file_storehouse.engine.EngineABC" title="file_storehouse.engine.EngineABC"><em>EngineABC</em></a>) – Back-end file engine.</p></li>
+<li><p><strong>io_transformations</strong> (<em>Tuple</em><em>[</em><a class="reference internal" href="#file_storehouse.transformation.TransformationABC" title="file_storehouse.transformation.TransformationABC"><em>TransformationABC</em></a><em>, </em><em>...</em><em>]</em>) – A container describing the transformations to be applied to the objects when
+manipulating them back and forward the back-end engine. They are given in the
+same order they are expected to be applied when loading the files.</p></li>
+<li><p><strong>key_mapping</strong> (<a class="reference internal" href="#file_storehouse.key_mapping.KeyMappingABC" title="file_storehouse.key_mapping.KeyMappingABC"><em>KeyMappingABC</em></a>) – The <code class="docutils literal notranslate"><span class="pre">key_mapping</span></code> translates back and forward the key used in the dictionary
+to the absolute path used to access the files from the engine.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>For the <code class="docutils literal notranslate"><span class="pre">Mapping</span></code> protocol and read-only protection, see
+<code class="docutils literal notranslate"><span class="pre">file_storehouse.FileManagerReadOnly</span></code>.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.file_manager.FileManager.__delitem__">
+<span class="sig-name descname"><span class="pre">__delitem__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.13)"><span class="pre">Any</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#file_storehouse.file_manager.FileManager.__delitem__" title="Link to this definition">#</a></dt>
+<dd><p>Delete a file from the client associated to the given id.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.file_manager.FileManager.__setitem__">
+<span class="sig-name descname"><span class="pre">__setitem__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.13)"><span class="pre">Any</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.13)"><span class="pre">Any</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#file_storehouse.file_manager.FileManager.__setitem__" title="Link to this definition">#</a></dt>
+<dd><p>Upload a file to the client associated to the given key.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="file_storehouse.file_manager.FileManagerReadOnly">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">file_storehouse.file_manager.</span></span><span class="sig-name descname"><span class="pre">FileManagerReadOnly</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">engine:</span> <span class="pre">~file_storehouse.engine.base.EngineABC</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">io_transformations:</span> <span class="pre">~typing.Tuple[~file_storehouse.transformation.base.TransformationABC</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">...]</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key_mapping:</span> <span class="pre">~file_storehouse.key_mapping.base.KeyMappingABC</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#file_storehouse.file_manager.FileManagerReadOnly" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></a></p>
+<p>File manager with read only properties.</p>
+<p>It implements the <code class="docutils literal notranslate"><span class="pre">Mapping</span></code> protocol, alloying the users to access files using
+a friendly dict-like interface.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>engine</strong> (<a class="reference internal" href="#file_storehouse.engine.EngineABC" title="file_storehouse.engine.EngineABC"><em>EngineABC</em></a>) – Back-end file engine.</p></li>
+<li><p><strong>io_transformations</strong> (<em>Tuple</em><em>[</em><a class="reference internal" href="#file_storehouse.transformation.TransformationABC" title="file_storehouse.transformation.TransformationABC"><em>TransformationABC</em></a><em>, </em><em>...</em><em>]</em>) – A container describing the transformations to be applied to the objects when
+manipulating them back and forward the back-end engine. They are given in the
+same order they are expected to be applied when loading the files.</p></li>
+<li><p><strong>key_mapping</strong> (<a class="reference internal" href="#file_storehouse.key_mapping.KeyMappingABC" title="file_storehouse.key_mapping.KeyMappingABC"><em>KeyMappingABC</em></a>) – The <code class="docutils literal notranslate"><span class="pre">key_mapping</span></code> translates back and forward the key used in the dictionary
+to the absolute path used to access the files from the engine.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>For the <code class="docutils literal notranslate"><span class="pre">MutableMapping</span></code> protocol and writhing capabilities, see
+<code class="docutils literal notranslate"><span class="pre">file_storehouse.FileManager</span></code>.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.file_manager.FileManagerReadOnly.__delattr__">
+<span class="sig-name descname"><span class="pre">__delattr__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#file_storehouse.file_manager.FileManagerReadOnly.__delattr__" title="Link to this definition">#</a></dt>
+<dd><p>Implement delattr(self, name).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.file_manager.FileManagerReadOnly.__getitem__">
+<span class="sig-name descname"><span class="pre">__getitem__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.13)"><span class="pre">Any</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.13)"><span class="pre">Any</span></a></span></span><a class="headerlink" href="#file_storehouse.file_manager.FileManagerReadOnly.__getitem__" title="Link to this definition">#</a></dt>
+<dd><p>Get from the file engine the object associated to the given key.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>key</strong> (<em>Any</em>) – Dictionary key, that is translated internally to the engine absolute path
+according to the <code class="docutils literal notranslate"><span class="pre">key_mapping</span></code>.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The object resulting from the <code class="docutils literal notranslate"><span class="pre">io_transformations</span></code>.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Any</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#KeyError" title="(in Python v3.13)"><strong>KeyError</strong></a> – If there is no object associated with the given key.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.file_manager.FileManagerReadOnly.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">engine:</span> <span class="pre">~file_storehouse.engine.base.EngineABC</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">io_transformations:</span> <span class="pre">~typing.Tuple[~file_storehouse.transformation.base.TransformationABC</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">...]</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key_mapping:</span> <span class="pre">~file_storehouse.key_mapping.base.KeyMappingABC</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#file_storehouse.file_manager.FileManagerReadOnly.__init__" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.file_manager.FileManagerReadOnly.__iter__">
+<span class="sig-name descname"><span class="pre">__iter__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Iterator" title="(in Python v3.13)"><span class="pre">Iterator</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.13)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#file_storehouse.file_manager.FileManagerReadOnly.__iter__" title="Link to this definition">#</a></dt>
+<dd><p>Yield the keys found in the working folder.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.file_manager.FileManagerReadOnly.__len__">
+<span class="sig-name descname"><span class="pre">__len__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><span class="pre">int</span></a></span></span><a class="headerlink" href="#file_storehouse.file_manager.FileManagerReadOnly.__len__" title="Link to this definition">#</a></dt>
+<dd><p>Count the number of keys found in the working folder.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.file_manager.FileManagerReadOnly.__repr__">
+<span class="sig-name descname"><span class="pre">__repr__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#file_storehouse.file_manager.FileManagerReadOnly.__repr__" title="Link to this definition">#</a></dt>
+<dd><p>Return repr(self).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.file_manager.FileManagerReadOnly.__setattr__">
+<span class="sig-name descname"><span class="pre">__setattr__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#file_storehouse.file_manager.FileManagerReadOnly.__setattr__" title="Link to this definition">#</a></dt>
+<dd><p>Implement setattr(self, name, value).</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="file_storehouse.file_manager.FileManagerReadOnly.__weakref__">
+<span class="sig-name descname"><span class="pre">__weakref__</span></span><a class="headerlink" href="#file_storehouse.file_manager.FileManagerReadOnly.__weakref__" title="Link to this definition">#</a></dt>
+<dd><p>list of weak references to the object</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-file_storehouse.key_mapping">
+<span id="key-mapping"></span><h2>Key mapping<a class="headerlink" href="#module-file_storehouse.key_mapping" title="Link to this heading">#</a></h2>
+<p>Key mapping.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="file_storehouse.key_mapping.KeyMappingABC">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">file_storehouse.key_mapping.</span></span><span class="sig-name descname"><span class="pre">KeyMappingABC</span></span><a class="headerlink" href="#file_storehouse.key_mapping.KeyMappingABC" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/abc.html#abc.ABC" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></a></p>
+<p>Describe how to convert dictionary keys to objects’ keys at S3 and vice versa.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="file_storehouse.key_mapping.KeyMappingABC.__weakref__">
+<span class="sig-name descname"><span class="pre">__weakref__</span></span><a class="headerlink" href="#file_storehouse.key_mapping.KeyMappingABC.__weakref__" title="Link to this definition">#</a></dt>
+<dd><p>list of weak references to the object</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.key_mapping.KeyMappingABC.get_dict_key_from_engine">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_dict_key_from_engine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">engine_key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/os.html#os.PathLike" title="(in Python v3.13)"><span class="pre">PathLike</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.13)"><span class="pre">Any</span></a></span></span><a class="headerlink" href="#file_storehouse.key_mapping.KeyMappingABC.get_dict_key_from_engine" title="Link to this definition">#</a></dt>
+<dd><p>Compute a Python dictionary’s key from an object’s key at the engine.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>engine_key</strong> (<em>PathLike</em>) – Key of the object at the engine.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Key of the Python dictionary.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.key_mapping.KeyMappingABC.get_engine_key_from_dict">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_engine_key_from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dict_key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.13)"><span class="pre">Any</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/os.html#os.PathLike" title="(in Python v3.13)"><span class="pre">PathLike</span></a></span></span><a class="headerlink" href="#file_storehouse.key_mapping.KeyMappingABC.get_engine_key_from_dict" title="Link to this definition">#</a></dt>
+<dd><p>Compute an object’s key at the engine from a Python dictionary’s key.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dict_key</strong> (<em>Any</em>) – Key of the Python dictionary.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Key of the object at the engine.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>PathLike</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="file_storehouse.key_mapping.KeyMappingNumeratedFile">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">file_storehouse.key_mapping.</span></span><span class="sig-name descname"><span class="pre">KeyMappingNumeratedFile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">suffix</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#file_storehouse.key_mapping.KeyMappingNumeratedFile" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#file_storehouse.key_mapping.KeyMappingABC" title="file_storehouse.key_mapping.base.KeyMappingABC"><code class="xref py py-class docutils literal notranslate"><span class="pre">KeyMappingABC</span></code></a></p>
+<p>Numerated key mapping.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.key_mapping.KeyMappingNumeratedFile.__delattr__">
+<span class="sig-name descname"><span class="pre">__delattr__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#file_storehouse.key_mapping.KeyMappingNumeratedFile.__delattr__" title="Link to this definition">#</a></dt>
+<dd><p>Implement delattr(self, name).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.key_mapping.KeyMappingNumeratedFile.__eq__">
+<span class="sig-name descname"><span class="pre">__eq__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#file_storehouse.key_mapping.KeyMappingNumeratedFile.__eq__" title="Link to this definition">#</a></dt>
+<dd><p>Return self==value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.key_mapping.KeyMappingNumeratedFile.__hash__">
+<span class="sig-name descname"><span class="pre">__hash__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#file_storehouse.key_mapping.KeyMappingNumeratedFile.__hash__" title="Link to this definition">#</a></dt>
+<dd><p>Return hash(self).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.key_mapping.KeyMappingNumeratedFile.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">suffix</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#file_storehouse.key_mapping.KeyMappingNumeratedFile.__init__" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.key_mapping.KeyMappingNumeratedFile.__repr__">
+<span class="sig-name descname"><span class="pre">__repr__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#file_storehouse.key_mapping.KeyMappingNumeratedFile.__repr__" title="Link to this definition">#</a></dt>
+<dd><p>Return repr(self).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.key_mapping.KeyMappingNumeratedFile.__setattr__">
+<span class="sig-name descname"><span class="pre">__setattr__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#file_storehouse.key_mapping.KeyMappingNumeratedFile.__setattr__" title="Link to this definition">#</a></dt>
+<dd><p>Implement setattr(self, name, value).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.key_mapping.KeyMappingNumeratedFile.get_dict_key_from_engine">
+<span class="sig-name descname"><span class="pre">get_dict_key_from_engine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">engine_key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/os.html#os.PathLike" title="(in Python v3.13)"><span class="pre">PathLike</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><span class="pre">int</span></a></span></span><a class="headerlink" href="#file_storehouse.key_mapping.KeyMappingNumeratedFile.get_dict_key_from_engine" title="Link to this definition">#</a></dt>
+<dd><p>Compute a Python dictionary’s key from an object’s key at the engine.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>engine_key</strong> (<em>PathLike</em>) – Key of the object at the engine.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Key of the Python dictionary.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)">int</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.key_mapping.KeyMappingNumeratedFile.get_engine_key_from_dict">
+<span class="sig-name descname"><span class="pre">get_engine_key_from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dict_key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/os.html#os.PathLike" title="(in Python v3.13)"><span class="pre">PathLike</span></a></span></span><a class="headerlink" href="#file_storehouse.key_mapping.KeyMappingNumeratedFile.get_engine_key_from_dict" title="Link to this definition">#</a></dt>
+<dd><p>Compute an object’s key at S3 from a Python dictionary’s key.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dict_key</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><em>int</em></a>) – Key of the Python dictionary.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Key of the object at S3.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="file_storehouse.key_mapping.KeyMappingNumeratedFolder">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">file_storehouse.key_mapping.</span></span><span class="sig-name descname"><span class="pre">KeyMappingNumeratedFolder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#file_storehouse.key_mapping.KeyMappingNumeratedFolder" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#file_storehouse.key_mapping.KeyMappingABC" title="file_storehouse.key_mapping.base.KeyMappingABC"><code class="xref py py-class docutils literal notranslate"><span class="pre">KeyMappingABC</span></code></a></p>
+<p>Numerated key mapping.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.key_mapping.KeyMappingNumeratedFolder.__delattr__">
+<span class="sig-name descname"><span class="pre">__delattr__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#file_storehouse.key_mapping.KeyMappingNumeratedFolder.__delattr__" title="Link to this definition">#</a></dt>
+<dd><p>Implement delattr(self, name).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.key_mapping.KeyMappingNumeratedFolder.__eq__">
+<span class="sig-name descname"><span class="pre">__eq__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#file_storehouse.key_mapping.KeyMappingNumeratedFolder.__eq__" title="Link to this definition">#</a></dt>
+<dd><p>Return self==value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.key_mapping.KeyMappingNumeratedFolder.__hash__">
+<span class="sig-name descname"><span class="pre">__hash__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#file_storehouse.key_mapping.KeyMappingNumeratedFolder.__hash__" title="Link to this definition">#</a></dt>
+<dd><p>Return hash(self).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.key_mapping.KeyMappingNumeratedFolder.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#file_storehouse.key_mapping.KeyMappingNumeratedFolder.__init__" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.key_mapping.KeyMappingNumeratedFolder.__repr__">
+<span class="sig-name descname"><span class="pre">__repr__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#file_storehouse.key_mapping.KeyMappingNumeratedFolder.__repr__" title="Link to this definition">#</a></dt>
+<dd><p>Return repr(self).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.key_mapping.KeyMappingNumeratedFolder.__setattr__">
+<span class="sig-name descname"><span class="pre">__setattr__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#file_storehouse.key_mapping.KeyMappingNumeratedFolder.__setattr__" title="Link to this definition">#</a></dt>
+<dd><p>Implement setattr(self, name, value).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.key_mapping.KeyMappingNumeratedFolder.get_dict_key_from_engine">
+<span class="sig-name descname"><span class="pre">get_dict_key_from_engine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">engine_key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/os.html#os.PathLike" title="(in Python v3.13)"><span class="pre">PathLike</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><span class="pre">int</span></a></span></span><a class="headerlink" href="#file_storehouse.key_mapping.KeyMappingNumeratedFolder.get_dict_key_from_engine" title="Link to this definition">#</a></dt>
+<dd><p>Compute a Python dictionary’s key from an object’s key at the engine.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>engine_key</strong> (<em>PathLike</em>) – Key of the object at the engine.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Key of the Python dictionary.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)">int</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.key_mapping.KeyMappingNumeratedFolder.get_engine_key_from_dict">
+<span class="sig-name descname"><span class="pre">get_engine_key_from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dict_key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/os.html#os.PathLike" title="(in Python v3.13)"><span class="pre">PathLike</span></a></span></span><a class="headerlink" href="#file_storehouse.key_mapping.KeyMappingNumeratedFolder.get_engine_key_from_dict" title="Link to this definition">#</a></dt>
+<dd><p>Compute an object’s key at the engine from a Python dictionary’s key.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dict_key</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><em>int</em></a>) – Key of the Python dictionary.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Key of the object at the engine.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>PathLike</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="file_storehouse.key_mapping.KeyMappingRaw">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">file_storehouse.key_mapping.</span></span><span class="sig-name descname"><span class="pre">KeyMappingRaw</span></span><a class="headerlink" href="#file_storehouse.key_mapping.KeyMappingRaw" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#file_storehouse.key_mapping.KeyMappingABC" title="file_storehouse.key_mapping.base.KeyMappingABC"><code class="xref py py-class docutils literal notranslate"><span class="pre">KeyMappingABC</span></code></a></p>
+<p>Raw key mapping.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.key_mapping.KeyMappingRaw.__delattr__">
+<span class="sig-name descname"><span class="pre">__delattr__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#file_storehouse.key_mapping.KeyMappingRaw.__delattr__" title="Link to this definition">#</a></dt>
+<dd><p>Implement delattr(self, name).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.key_mapping.KeyMappingRaw.__eq__">
+<span class="sig-name descname"><span class="pre">__eq__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#file_storehouse.key_mapping.KeyMappingRaw.__eq__" title="Link to this definition">#</a></dt>
+<dd><p>Return self==value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.key_mapping.KeyMappingRaw.__hash__">
+<span class="sig-name descname"><span class="pre">__hash__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#file_storehouse.key_mapping.KeyMappingRaw.__hash__" title="Link to this definition">#</a></dt>
+<dd><p>Return hash(self).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.key_mapping.KeyMappingRaw.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#file_storehouse.key_mapping.KeyMappingRaw.__init__" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.key_mapping.KeyMappingRaw.__repr__">
+<span class="sig-name descname"><span class="pre">__repr__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#file_storehouse.key_mapping.KeyMappingRaw.__repr__" title="Link to this definition">#</a></dt>
+<dd><p>Return repr(self).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.key_mapping.KeyMappingRaw.__setattr__">
+<span class="sig-name descname"><span class="pre">__setattr__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#file_storehouse.key_mapping.KeyMappingRaw.__setattr__" title="Link to this definition">#</a></dt>
+<dd><p>Implement setattr(self, name, value).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.key_mapping.KeyMappingRaw.get_dict_key_from_engine">
+<span class="sig-name descname"><span class="pre">get_dict_key_from_engine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">engine_key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/os.html#os.PathLike" title="(in Python v3.13)"><span class="pre">PathLike</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/os.html#os.PathLike" title="(in Python v3.13)"><span class="pre">PathLike</span></a></span></span><a class="headerlink" href="#file_storehouse.key_mapping.KeyMappingRaw.get_dict_key_from_engine" title="Link to this definition">#</a></dt>
+<dd><p>Compute a Python dictionary’s key from an object’s key at the engine.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>engine_key</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – Key of the object at the engine.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Key of the Python dictionary.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>PathLike</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.key_mapping.KeyMappingRaw.get_engine_key_from_dict">
+<span class="sig-name descname"><span class="pre">get_engine_key_from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dict_key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/os.html#os.PathLike" title="(in Python v3.13)"><span class="pre">PathLike</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/os.html#os.PathLike" title="(in Python v3.13)"><span class="pre">PathLike</span></a></span></span><a class="headerlink" href="#file_storehouse.key_mapping.KeyMappingRaw.get_engine_key_from_dict" title="Link to this definition">#</a></dt>
+<dd><p>Compute an object’s key at the engine from a Python dictionary’s key.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dict_key</strong> (<em>Any</em>) – Key of the Python dictionary.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Key of the object at the engine.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-file_storehouse.transformation">
+<span id="transformations"></span><h2>Transformations<a class="headerlink" href="#module-file_storehouse.transformation" title="Link to this heading">#</a></h2>
+<p>Transformations.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="file_storehouse.transformation.TransformationABC">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">file_storehouse.transformation.</span></span><span class="sig-name descname"><span class="pre">TransformationABC</span></span><a class="headerlink" href="#file_storehouse.transformation.TransformationABC" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/abc.html#abc.ABC" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></a></p>
+<p>Base for transformations.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="file_storehouse.transformation.TransformationABC.__weakref__">
+<span class="sig-name descname"><span class="pre">__weakref__</span></span><a class="headerlink" href="#file_storehouse.transformation.TransformationABC.__weakref__" title="Link to this definition">#</a></dt>
+<dd><p>list of weak references to the object</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.transformation.TransformationABC.convert_from_dict_to_engine">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">convert_from_dict_to_engine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.13)"><span class="pre">Any</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.13)"><span class="pre">Any</span></a></span></span><a class="headerlink" href="#file_storehouse.transformation.TransformationABC.convert_from_dict_to_engine" title="Link to this definition">#</a></dt>
+<dd><p>From dict to engine.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.transformation.TransformationABC.convert_from_engine_to_dict">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">convert_from_engine_to_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.13)"><span class="pre">Any</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.13)"><span class="pre">Any</span></a></span></span><a class="headerlink" href="#file_storehouse.transformation.TransformationABC.convert_from_engine_to_dict" title="Link to this definition">#</a></dt>
+<dd><p>From engine to dict.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="file_storehouse.transformation.TransformationCodecs">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">file_storehouse.transformation.</span></span><span class="sig-name descname"><span class="pre">TransformationCodecs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">encoding_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'utf-8'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#file_storehouse.transformation.TransformationCodecs" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#file_storehouse.transformation.TransformationABC" title="file_storehouse.transformation.base.TransformationABC"><code class="xref py py-class docutils literal notranslate"><span class="pre">TransformationABC</span></code></a></p>
+<p>Support for encode/decode transformations.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.transformation.TransformationCodecs.__delattr__">
+<span class="sig-name descname"><span class="pre">__delattr__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#file_storehouse.transformation.TransformationCodecs.__delattr__" title="Link to this definition">#</a></dt>
+<dd><p>Implement delattr(self, name).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.transformation.TransformationCodecs.__eq__">
+<span class="sig-name descname"><span class="pre">__eq__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#file_storehouse.transformation.TransformationCodecs.__eq__" title="Link to this definition">#</a></dt>
+<dd><p>Return self==value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.transformation.TransformationCodecs.__hash__">
+<span class="sig-name descname"><span class="pre">__hash__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#file_storehouse.transformation.TransformationCodecs.__hash__" title="Link to this definition">#</a></dt>
+<dd><p>Return hash(self).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.transformation.TransformationCodecs.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">encoding_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'utf-8'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#file_storehouse.transformation.TransformationCodecs.__init__" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.transformation.TransformationCodecs.__repr__">
+<span class="sig-name descname"><span class="pre">__repr__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#file_storehouse.transformation.TransformationCodecs.__repr__" title="Link to this definition">#</a></dt>
+<dd><p>Return repr(self).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.transformation.TransformationCodecs.__setattr__">
+<span class="sig-name descname"><span class="pre">__setattr__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#file_storehouse.transformation.TransformationCodecs.__setattr__" title="Link to this definition">#</a></dt>
+<dd><p>Implement setattr(self, name, value).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.transformation.TransformationCodecs.convert_from_dict_to_engine">
+<span class="sig-name descname"><span class="pre">convert_from_dict_to_engine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytes" title="(in Python v3.13)"><span class="pre">bytes</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></span><a class="headerlink" href="#file_storehouse.transformation.TransformationCodecs.convert_from_dict_to_engine" title="Link to this definition">#</a></dt>
+<dd><p>From dict to engine.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.transformation.TransformationCodecs.convert_from_engine_to_dict">
+<span class="sig-name descname"><span class="pre">convert_from_engine_to_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytes" title="(in Python v3.13)"><span class="pre">bytes</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytes" title="(in Python v3.13)"><span class="pre">bytes</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></span><a class="headerlink" href="#file_storehouse.transformation.TransformationCodecs.convert_from_engine_to_dict" title="Link to this definition">#</a></dt>
+<dd><p>From engine to dict.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="file_storehouse.transformation.TransformationJson">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">file_storehouse.transformation.</span></span><span class="sig-name descname"><span class="pre">TransformationJson</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dump_options:</span> <span class="pre">dict</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">load_options:</span> <span class="pre">dict</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#file_storehouse.transformation.TransformationJson" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#file_storehouse.transformation.TransformationABC" title="file_storehouse.transformation.base.TransformationABC"><code class="xref py py-class docutils literal notranslate"><span class="pre">TransformationABC</span></code></a></p>
+<p>Support for json dump/load transformations.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.transformation.TransformationJson.__delattr__">
+<span class="sig-name descname"><span class="pre">__delattr__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#file_storehouse.transformation.TransformationJson.__delattr__" title="Link to this definition">#</a></dt>
+<dd><p>Implement delattr(self, name).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.transformation.TransformationJson.__eq__">
+<span class="sig-name descname"><span class="pre">__eq__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#file_storehouse.transformation.TransformationJson.__eq__" title="Link to this definition">#</a></dt>
+<dd><p>Return self==value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.transformation.TransformationJson.__hash__">
+<span class="sig-name descname"><span class="pre">__hash__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#file_storehouse.transformation.TransformationJson.__hash__" title="Link to this definition">#</a></dt>
+<dd><p>Return hash(self).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.transformation.TransformationJson.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dump_options:</span> <span class="pre">dict</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">load_options:</span> <span class="pre">dict</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#file_storehouse.transformation.TransformationJson.__init__" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.transformation.TransformationJson.__repr__">
+<span class="sig-name descname"><span class="pre">__repr__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#file_storehouse.transformation.TransformationJson.__repr__" title="Link to this definition">#</a></dt>
+<dd><p>Return repr(self).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.transformation.TransformationJson.__setattr__">
+<span class="sig-name descname"><span class="pre">__setattr__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#file_storehouse.transformation.TransformationJson.__setattr__" title="Link to this definition">#</a></dt>
+<dd><p>Implement setattr(self, name, value).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.transformation.TransformationJson.convert_from_dict_to_engine">
+<span class="sig-name descname"><span class="pre">convert_from_dict_to_engine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.13)"><span class="pre">Any</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.13)"><span class="pre">Any</span></a></span></span><a class="headerlink" href="#file_storehouse.transformation.TransformationJson.convert_from_dict_to_engine" title="Link to this definition">#</a></dt>
+<dd><p>From dict to engine.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.transformation.TransformationJson.convert_from_engine_to_dict">
+<span class="sig-name descname"><span class="pre">convert_from_engine_to_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.13)"><span class="pre">Any</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.13)"><span class="pre">Any</span></a></span></span><a class="headerlink" href="#file_storehouse.transformation.TransformationJson.convert_from_engine_to_dict" title="Link to this definition">#</a></dt>
+<dd><p>From engine to dict.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-file_storehouse.engine">
+<span id="engines"></span><h2>Engines<a class="headerlink" href="#module-file_storehouse.engine" title="Link to this heading">#</a></h2>
+<p>Engines.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="file_storehouse.engine.EngineABC">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">file_storehouse.engine.</span></span><span class="sig-name descname"><span class="pre">EngineABC</span></span><a class="headerlink" href="#file_storehouse.engine.EngineABC" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/abc.html#abc.ABC" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></a></p>
+<p>Base for engine.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="file_storehouse.engine.EngineABC.__weakref__">
+<span class="sig-name descname"><span class="pre">__weakref__</span></span><a class="headerlink" href="#file_storehouse.engine.EngineABC.__weakref__" title="Link to this definition">#</a></dt>
+<dd><p>list of weak references to the object</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.engine.EngineABC.convert_to_absolute_path">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">convert_to_absolute_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">relative_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/os.html#os.PathLike" title="(in Python v3.13)"><span class="pre">PathLike</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.13)"><span class="pre">Any</span></a></span></span><a class="headerlink" href="#file_storehouse.engine.EngineABC.convert_to_absolute_path" title="Link to this definition">#</a></dt>
+<dd><p>Convert to absolute path.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.engine.EngineABC.convert_to_relative_path">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">convert_to_relative_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">absolute_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.13)"><span class="pre">Any</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/os.html#os.PathLike" title="(in Python v3.13)"><span class="pre">PathLike</span></a></span></span><a class="headerlink" href="#file_storehouse.engine.EngineABC.convert_to_relative_path" title="Link to this definition">#</a></dt>
+<dd><p>Convert to relative path.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.engine.EngineABC.delete_item">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">delete_item</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.13)"><span class="pre">Any</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#file_storehouse.engine.EngineABC.delete_item" title="Link to this definition">#</a></dt>
+<dd><p>Delete the item related to the key.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.engine.EngineABC.get_item">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_item</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.13)"><span class="pre">Any</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytes" title="(in Python v3.13)"><span class="pre">bytes</span></a></span></span><a class="headerlink" href="#file_storehouse.engine.EngineABC.get_item" title="Link to this definition">#</a></dt>
+<dd><p>Get the item related to the key.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.engine.EngineABC.list_keys">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">list_keys</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Iterator" title="(in Python v3.13)"><span class="pre">Iterator</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/os.html#os.PathLike" title="(in Python v3.13)"><span class="pre">PathLike</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#file_storehouse.engine.EngineABC.list_keys" title="Link to this definition">#</a></dt>
+<dd><p>List the keys related to the engine.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.engine.EngineABC.set_item">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">set_item</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.13)"><span class="pre">Any</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytes" title="(in Python v3.13)"><span class="pre">bytes</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#file_storehouse.engine.EngineABC.set_item" title="Link to this definition">#</a></dt>
+<dd><p>Set the item related to the key.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="file_storehouse.engine.EngineLocal">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">file_storehouse.engine.</span></span><span class="sig-name descname"><span class="pre">EngineLocal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.13)"><span class="pre">Path</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#file_storehouse.engine.EngineLocal" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#file_storehouse.engine.EngineABC" title="file_storehouse.engine.base.EngineABC"><code class="xref py py-class docutils literal notranslate"><span class="pre">EngineABC</span></code></a></p>
+<p>Engine for the local file system.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.engine.EngineLocal.__delattr__">
+<span class="sig-name descname"><span class="pre">__delattr__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#file_storehouse.engine.EngineLocal.__delattr__" title="Link to this definition">#</a></dt>
+<dd><p>Implement delattr(self, name).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.engine.EngineLocal.__eq__">
+<span class="sig-name descname"><span class="pre">__eq__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#file_storehouse.engine.EngineLocal.__eq__" title="Link to this definition">#</a></dt>
+<dd><p>Return self==value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.engine.EngineLocal.__hash__">
+<span class="sig-name descname"><span class="pre">__hash__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#file_storehouse.engine.EngineLocal.__hash__" title="Link to this definition">#</a></dt>
+<dd><p>Return hash(self).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.engine.EngineLocal.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.13)"><span class="pre">Path</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#file_storehouse.engine.EngineLocal.__init__" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.engine.EngineLocal.__repr__">
+<span class="sig-name descname"><span class="pre">__repr__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#file_storehouse.engine.EngineLocal.__repr__" title="Link to this definition">#</a></dt>
+<dd><p>Return repr(self).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.engine.EngineLocal.__setattr__">
+<span class="sig-name descname"><span class="pre">__setattr__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#file_storehouse.engine.EngineLocal.__setattr__" title="Link to this definition">#</a></dt>
+<dd><p>Implement setattr(self, name, value).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.engine.EngineLocal.convert_to_absolute_path">
+<span class="sig-name descname"><span class="pre">convert_to_absolute_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">relative_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/os.html#os.PathLike" title="(in Python v3.13)"><span class="pre">PathLike</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.13)"><span class="pre">Path</span></a></span></span><a class="headerlink" href="#file_storehouse.engine.EngineLocal.convert_to_absolute_path" title="Link to this definition">#</a></dt>
+<dd><p>Convert to absolute path.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.engine.EngineLocal.convert_to_relative_path">
+<span class="sig-name descname"><span class="pre">convert_to_relative_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">absolute_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.13)"><span class="pre">Path</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.13)"><span class="pre">Path</span></a></span></span><a class="headerlink" href="#file_storehouse.engine.EngineLocal.convert_to_relative_path" title="Link to this definition">#</a></dt>
+<dd><p>Convert to relative path.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.engine.EngineLocal.delete_item">
+<span class="sig-name descname"><span class="pre">delete_item</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.13)"><span class="pre">Path</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#file_storehouse.engine.EngineLocal.delete_item" title="Link to this definition">#</a></dt>
+<dd><p>Delete the item related to the key.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.engine.EngineLocal.get_item">
+<span class="sig-name descname"><span class="pre">get_item</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.13)"><span class="pre">Path</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytes" title="(in Python v3.13)"><span class="pre">bytes</span></a></span></span><a class="headerlink" href="#file_storehouse.engine.EngineLocal.get_item" title="Link to this definition">#</a></dt>
+<dd><p>Get the item related to the key.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.engine.EngineLocal.list_keys">
+<span class="sig-name descname"><span class="pre">list_keys</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Iterator" title="(in Python v3.13)"><span class="pre">Iterator</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/os.html#os.PathLike" title="(in Python v3.13)"><span class="pre">PathLike</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#file_storehouse.engine.EngineLocal.list_keys" title="Link to this definition">#</a></dt>
+<dd><p>List the keys related to the engine.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.engine.EngineLocal.set_item">
+<span class="sig-name descname"><span class="pre">set_item</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.13)"><span class="pre">Path</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytes" title="(in Python v3.13)"><span class="pre">bytes</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#file_storehouse.engine.EngineLocal.set_item" title="Link to this definition">#</a></dt>
+<dd><p>Set the item related to the key.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="file_storehouse.engine.EngineS3">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">file_storehouse.engine.</span></span><span class="sig-name descname"><span class="pre">EngineS3</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s3_client</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">BaseClient</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bucket_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#file_storehouse.engine.EngineS3" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#file_storehouse.engine.EngineABC" title="file_storehouse.engine.base.EngineABC"><code class="xref py py-class docutils literal notranslate"><span class="pre">EngineABC</span></code></a></p>
+<p>Engine for S3 buckets.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.engine.EngineS3.__delattr__">
+<span class="sig-name descname"><span class="pre">__delattr__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#file_storehouse.engine.EngineS3.__delattr__" title="Link to this definition">#</a></dt>
+<dd><p>Implement delattr(self, name).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.engine.EngineS3.__eq__">
+<span class="sig-name descname"><span class="pre">__eq__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#file_storehouse.engine.EngineS3.__eq__" title="Link to this definition">#</a></dt>
+<dd><p>Return self==value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.engine.EngineS3.__hash__">
+<span class="sig-name descname"><span class="pre">__hash__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#file_storehouse.engine.EngineS3.__hash__" title="Link to this definition">#</a></dt>
+<dd><p>Return hash(self).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.engine.EngineS3.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s3_client</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">BaseClient</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bucket_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#file_storehouse.engine.EngineS3.__init__" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.engine.EngineS3.__repr__">
+<span class="sig-name descname"><span class="pre">__repr__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#file_storehouse.engine.EngineS3.__repr__" title="Link to this definition">#</a></dt>
+<dd><p>Return repr(self).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.engine.EngineS3.__setattr__">
+<span class="sig-name descname"><span class="pre">__setattr__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#file_storehouse.engine.EngineS3.__setattr__" title="Link to this definition">#</a></dt>
+<dd><p>Implement setattr(self, name, value).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.engine.EngineS3.convert_to_absolute_path">
+<span class="sig-name descname"><span class="pre">convert_to_absolute_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">relative_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/os.html#os.PathLike" title="(in Python v3.13)"><span class="pre">PathLike</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></span><a class="headerlink" href="#file_storehouse.engine.EngineS3.convert_to_absolute_path" title="Link to this definition">#</a></dt>
+<dd><p>Convert to absolute path.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.engine.EngineS3.convert_to_relative_path">
+<span class="sig-name descname"><span class="pre">convert_to_relative_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">absolute_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/os.html#os.PathLike" title="(in Python v3.13)"><span class="pre">PathLike</span></a></span></span><a class="headerlink" href="#file_storehouse.engine.EngineS3.convert_to_relative_path" title="Link to this definition">#</a></dt>
+<dd><p>Convert to relative path.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.engine.EngineS3.delete_item">
+<span class="sig-name descname"><span class="pre">delete_item</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#file_storehouse.engine.EngineS3.delete_item" title="Link to this definition">#</a></dt>
+<dd><p>Delete the item related to the key.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.engine.EngineS3.ensure_bucket">
+<span class="sig-name descname"><span class="pre">ensure_bucket</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#file_storehouse.engine.EngineS3.ensure_bucket" title="Link to this definition">#</a></dt>
+<dd><p>Ensure that the bucket exists. Skip creation if it already exists.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.engine.EngineS3.get_item">
+<span class="sig-name descname"><span class="pre">get_item</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytes" title="(in Python v3.13)"><span class="pre">bytes</span></a></span></span><a class="headerlink" href="#file_storehouse.engine.EngineS3.get_item" title="Link to this definition">#</a></dt>
+<dd><p>Get the item related to the key.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.engine.EngineS3.list_keys">
+<span class="sig-name descname"><span class="pre">list_keys</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Iterator" title="(in Python v3.13)"><span class="pre">Iterator</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/os.html#os.PathLike" title="(in Python v3.13)"><span class="pre">PathLike</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#file_storehouse.engine.EngineS3.list_keys" title="Link to this definition">#</a></dt>
+<dd><p>List the keys related to the engine.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.engine.EngineS3.set_item">
+<span class="sig-name descname"><span class="pre">set_item</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytes" title="(in Python v3.13)"><span class="pre">bytes</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#file_storehouse.engine.EngineS3.set_item" title="Link to this definition">#</a></dt>
+<dd><p>Set the item related to the key.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-file_storehouse.extras">
+<span id="extras"></span><h2>Extras<a class="headerlink" href="#module-file_storehouse.extras" title="Link to this heading">#</a></h2>
+<p>Extra utilities from external packages.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="file_storehouse.extras.Stubber">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">file_storehouse.extras.</span></span><span class="sig-name descname"><span class="pre">Stubber</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#file_storehouse.extras.Stubber" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>This class will allow you to stub out requests so you don’t have to hit
+an endpoint to write tests. Responses are returned first in, first out.
+If operations are called out of order, or are called with no remaining
+queued responses, an error will be raised.</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">botocore.session</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">botocore.stub</span><span class="w"> </span><span class="kn">import</span> <span class="n">Stubber</span>
+
+
+<span class="n">s3</span> <span class="o">=</span> <span class="n">botocore</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">get_session</span><span class="p">()</span><span class="o">.</span><span class="n">create_client</span><span class="p">(</span><span class="s1">&#39;s3&#39;</span><span class="p">)</span>
+<span class="n">stubber</span> <span class="o">=</span> <span class="n">Stubber</span><span class="p">(</span><span class="n">s3</span><span class="p">)</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;IsTruncated&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;test-bucket&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;MaxKeys&#39;</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span> <span class="s1">&#39;Prefix&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Contents&#39;</span><span class="p">:</span> <span class="p">[{</span>
+        <span class="s1">&#39;Key&#39;</span><span class="p">:</span> <span class="s1">&#39;test.txt&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;ETag&#39;</span><span class="p">:</span> <span class="s1">&#39;&quot;abc123&quot;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;StorageClass&#39;</span><span class="p">:</span> <span class="s1">&#39;STANDARD&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;LastModified&#39;</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">9</span><span class="p">),</span>
+        <span class="s1">&#39;Owner&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;ID&#39;</span><span class="p">:</span> <span class="s1">&#39;abc123&#39;</span><span class="p">,</span> <span class="s1">&#39;DisplayName&#39;</span><span class="p">:</span> <span class="s1">&#39;myname&#39;</span><span class="p">},</span>
+        <span class="s1">&#39;Size&#39;</span><span class="p">:</span> <span class="mi">14814</span>
+    <span class="p">}],</span>
+    <span class="s1">&#39;EncodingType&#39;</span><span class="p">:</span> <span class="s1">&#39;url&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;ResponseMetadata&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;RequestId&#39;</span><span class="p">:</span> <span class="s1">&#39;abc123&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;HTTPStatusCode&#39;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+        <span class="s1">&#39;HostId&#39;</span><span class="p">:</span> <span class="s1">&#39;abc123&#39;</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;Marker&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span>
+<span class="p">}</span>
+
+<span class="n">expected_params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Bucket&#39;</span><span class="p">:</span> <span class="s1">&#39;test-bucket&#39;</span><span class="p">}</span>
+
+<span class="n">stubber</span><span class="o">.</span><span class="n">add_response</span><span class="p">(</span><span class="s1">&#39;list_objects&#39;</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="n">expected_params</span><span class="p">)</span>
+<span class="n">stubber</span><span class="o">.</span><span class="n">activate</span><span class="p">()</span>
+
+<span class="n">service_response</span> <span class="o">=</span> <span class="n">s3</span><span class="o">.</span><span class="n">list_objects</span><span class="p">(</span><span class="n">Bucket</span><span class="o">=</span><span class="s1">&#39;test-bucket&#39;</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">service_response</span> <span class="o">==</span> <span class="n">response</span>
+</pre></div>
+</div>
+<p>This class can also be called as a context manager, which will handle
+activation / deactivation for you.</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">botocore.session</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">botocore.stub</span><span class="w"> </span><span class="kn">import</span> <span class="n">Stubber</span>
+
+
+<span class="n">s3</span> <span class="o">=</span> <span class="n">botocore</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">get_session</span><span class="p">()</span><span class="o">.</span><span class="n">create_client</span><span class="p">(</span><span class="s1">&#39;s3&#39;</span><span class="p">)</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Owner&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;ID&quot;</span><span class="p">:</span> <span class="s2">&quot;foo&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;DisplayName&quot;</span><span class="p">:</span> <span class="s2">&quot;bar&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Buckets&quot;</span><span class="p">:</span> <span class="p">[{</span>
+        <span class="s2">&quot;CreationDate&quot;</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">9</span><span class="p">),</span>
+        <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;baz&quot;</span>
+    <span class="p">}]</span>
+<span class="p">}</span>
+
+
+<span class="k">with</span> <span class="n">Stubber</span><span class="p">(</span><span class="n">s3</span><span class="p">)</span> <span class="k">as</span> <span class="n">stubber</span><span class="p">:</span>
+    <span class="n">stubber</span><span class="o">.</span><span class="n">add_response</span><span class="p">(</span><span class="s1">&#39;list_buckets&#39;</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="p">{})</span>
+    <span class="n">service_response</span> <span class="o">=</span> <span class="n">s3</span><span class="o">.</span><span class="n">list_buckets</span><span class="p">()</span>
+
+<span class="k">assert</span> <span class="n">service_response</span> <span class="o">==</span> <span class="n">response</span>
+</pre></div>
+</div>
+<p>If you have an input parameter that is a randomly generated value, or you
+otherwise don’t care about its value, you can use <code class="docutils literal notranslate"><span class="pre">stub.ANY</span></code> to ignore
+it in validation.</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">botocore.session</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">botocore.stub</span><span class="w"> </span><span class="kn">import</span> <span class="n">Stubber</span><span class="p">,</span> <span class="n">ANY</span>
+
+
+<span class="n">s3</span> <span class="o">=</span> <span class="n">botocore</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">get_session</span><span class="p">()</span><span class="o">.</span><span class="n">create_client</span><span class="p">(</span><span class="s1">&#39;s3&#39;</span><span class="p">)</span>
+<span class="n">stubber</span> <span class="o">=</span> <span class="n">Stubber</span><span class="p">(</span><span class="n">s3</span><span class="p">)</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;IsTruncated&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="s1">&#39;test-bucket&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;MaxKeys&#39;</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span> <span class="s1">&#39;Prefix&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Contents&#39;</span><span class="p">:</span> <span class="p">[{</span>
+        <span class="s1">&#39;Key&#39;</span><span class="p">:</span> <span class="s1">&#39;test.txt&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;ETag&#39;</span><span class="p">:</span> <span class="s1">&#39;&quot;abc123&quot;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;StorageClass&#39;</span><span class="p">:</span> <span class="s1">&#39;STANDARD&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;LastModified&#39;</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">9</span><span class="p">),</span>
+        <span class="s1">&#39;Owner&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;ID&#39;</span><span class="p">:</span> <span class="s1">&#39;abc123&#39;</span><span class="p">,</span> <span class="s1">&#39;DisplayName&#39;</span><span class="p">:</span> <span class="s1">&#39;myname&#39;</span><span class="p">},</span>
+        <span class="s1">&#39;Size&#39;</span><span class="p">:</span> <span class="mi">14814</span>
+    <span class="p">}],</span>
+    <span class="s1">&#39;EncodingType&#39;</span><span class="p">:</span> <span class="s1">&#39;url&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;ResponseMetadata&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;RequestId&#39;</span><span class="p">:</span> <span class="s1">&#39;abc123&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;HTTPStatusCode&#39;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+        <span class="s1">&#39;HostId&#39;</span><span class="p">:</span> <span class="s1">&#39;abc123&#39;</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;Marker&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span>
+<span class="p">}</span>
+
+<span class="n">expected_params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Bucket&#39;</span><span class="p">:</span> <span class="n">ANY</span><span class="p">}</span>
+<span class="n">stubber</span><span class="o">.</span><span class="n">add_response</span><span class="p">(</span><span class="s1">&#39;list_objects&#39;</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="n">expected_params</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="n">stubber</span><span class="p">:</span>
+    <span class="n">service_response</span> <span class="o">=</span> <span class="n">s3</span><span class="o">.</span><span class="n">list_objects</span><span class="p">(</span><span class="n">Bucket</span><span class="o">=</span><span class="s1">&#39;test-bucket&#39;</span><span class="p">)</span>
+
+<span class="k">assert</span> <span class="n">service_response</span> <span class="o">==</span> <span class="n">response</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.extras.Stubber.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#file_storehouse.extras.Stubber.__init__" title="Link to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>client</strong> – The client to add your stubs to.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="file_storehouse.extras.Stubber.__weakref__">
+<span class="sig-name descname"><span class="pre">__weakref__</span></span><a class="headerlink" href="#file_storehouse.extras.Stubber.__weakref__" title="Link to this definition">#</a></dt>
+<dd><p>list of weak references to the object</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.extras.Stubber.activate">
+<span class="sig-name descname"><span class="pre">activate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#file_storehouse.extras.Stubber.activate" title="Link to this definition">#</a></dt>
+<dd><p>Activates the stubber on the client</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.extras.Stubber.add_client_error">
+<span class="sig-name descname"><span class="pre">add_client_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">service_error_code</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">service_message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">http_status_code</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">400</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">service_error_meta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expected_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">response_meta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">modeled_fields</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#file_storehouse.extras.Stubber.add_client_error" title="Link to this definition">#</a></dt>
+<dd><p>Adds a <code class="docutils literal notranslate"><span class="pre">ClientError</span></code> to the response queue.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>method</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – The name of the service method to return the error on.</p></li>
+<li><p><strong>service_error_code</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – The service error code to return,
+e.g. <code class="docutils literal notranslate"><span class="pre">NoSuchBucket</span></code></p></li>
+<li><p><strong>service_message</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – The service message to return, e.g.
+‘The specified bucket does not exist.’</p></li>
+<li><p><strong>http_status_code</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><em>int</em></a>) – The HTTP status code to return, e.g. 404, etc</p></li>
+<li><p><strong>service_error_meta</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)"><em>dict</em></a>) – Additional keys to be added to the
+service Error</p></li>
+<li><p><strong>expected_params</strong> – A dictionary of the expected parameters to
+be called for the provided service response. The parameters match
+the names of keyword arguments passed to that client call. If
+any of the parameters differ a <code class="docutils literal notranslate"><span class="pre">StubResponseError</span></code> is thrown.
+You can use stub.ANY to indicate a particular parameter to ignore
+in validation.</p></li>
+<li><p><strong>response_meta</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)"><em>dict</em></a>) – Additional keys to be added to the
+response’s ResponseMetadata</p></li>
+<li><p><strong>modeled_fields</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)"><em>dict</em></a>) – Additional keys to be added to the response
+based on fields that are modeled for the particular error code.
+These keys will be validated against the particular error shape
+designated by the error code.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.extras.Stubber.add_response">
+<span class="sig-name descname"><span class="pre">add_response</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">service_response</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expected_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#file_storehouse.extras.Stubber.add_response" title="Link to this definition">#</a></dt>
+<dd><p>Adds a service response to the response queue. This will be validated
+against the service model to ensure correctness. It should be noted,
+however, that while missing attributes are often considered correct,
+your code may not function properly if you leave them out. Therefore
+you should always fill in every value you see in a typical response for
+your particular request.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>method</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – The name of the client method to stub.</p></li>
+<li><p><strong>service_response</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)"><em>dict</em></a>) – A dict response stub. Provided parameters will
+be validated against the service model.</p></li>
+<li><p><strong>expected_params</strong> – A dictionary of the expected parameters to
+be called for the provided service response. The parameters match
+the names of keyword arguments passed to that client call. If
+any of the parameters differ a <code class="docutils literal notranslate"><span class="pre">StubResponseError</span></code> is thrown.
+You can use stub.ANY to indicate a particular parameter to ignore
+in validation. stub.ANY is only valid for top level params.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.extras.Stubber.assert_no_pending_responses">
+<span class="sig-name descname"><span class="pre">assert_no_pending_responses</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#file_storehouse.extras.Stubber.assert_no_pending_responses" title="Link to this definition">#</a></dt>
+<dd><p>Asserts that all expected calls were made.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file_storehouse.extras.Stubber.deactivate">
+<span class="sig-name descname"><span class="pre">deactivate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#file_storehouse.extras.Stubber.deactivate" title="Link to this definition">#</a></dt>
+<dd><p>Deactivates the stubber on the client</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="file_storehouse.extras.client">
+<span class="sig-prename descclassname"><span class="pre">file_storehouse.extras.</span></span><span class="sig-name descname"><span class="pre">client</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#file_storehouse.extras.client" title="Link to this definition">#</a></dt>
+<dd><p>Create a low-level service client by name using the default session.</p>
+<p>See <code class="xref py py-meth docutils literal notranslate"><span class="pre">boto3.session.Session.client()</span></code>.</p>
+</dd></dl>
+
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./references"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../getting-started/about.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">About</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="how-to-contribute.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">How to Contribute</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-file_storehouse.file_manager">File managers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.file_manager.FileManager"><code class="docutils literal notranslate"><span class="pre">FileManager</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.file_manager.FileManager.__delitem__"><code class="docutils literal notranslate"><span class="pre">FileManager.__delitem__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.file_manager.FileManager.__setitem__"><code class="docutils literal notranslate"><span class="pre">FileManager.__setitem__()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.file_manager.FileManagerReadOnly"><code class="docutils literal notranslate"><span class="pre">FileManagerReadOnly</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.file_manager.FileManagerReadOnly.__delattr__"><code class="docutils literal notranslate"><span class="pre">FileManagerReadOnly.__delattr__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.file_manager.FileManagerReadOnly.__getitem__"><code class="docutils literal notranslate"><span class="pre">FileManagerReadOnly.__getitem__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.file_manager.FileManagerReadOnly.__init__"><code class="docutils literal notranslate"><span class="pre">FileManagerReadOnly.__init__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.file_manager.FileManagerReadOnly.__iter__"><code class="docutils literal notranslate"><span class="pre">FileManagerReadOnly.__iter__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.file_manager.FileManagerReadOnly.__len__"><code class="docutils literal notranslate"><span class="pre">FileManagerReadOnly.__len__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.file_manager.FileManagerReadOnly.__repr__"><code class="docutils literal notranslate"><span class="pre">FileManagerReadOnly.__repr__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.file_manager.FileManagerReadOnly.__setattr__"><code class="docutils literal notranslate"><span class="pre">FileManagerReadOnly.__setattr__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.file_manager.FileManagerReadOnly.__weakref__"><code class="docutils literal notranslate"><span class="pre">FileManagerReadOnly.__weakref__</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-file_storehouse.key_mapping">Key mapping</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.key_mapping.KeyMappingABC"><code class="docutils literal notranslate"><span class="pre">KeyMappingABC</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.key_mapping.KeyMappingABC.__weakref__"><code class="docutils literal notranslate"><span class="pre">KeyMappingABC.__weakref__</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.key_mapping.KeyMappingABC.get_dict_key_from_engine"><code class="docutils literal notranslate"><span class="pre">KeyMappingABC.get_dict_key_from_engine()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.key_mapping.KeyMappingABC.get_engine_key_from_dict"><code class="docutils literal notranslate"><span class="pre">KeyMappingABC.get_engine_key_from_dict()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.key_mapping.KeyMappingNumeratedFile"><code class="docutils literal notranslate"><span class="pre">KeyMappingNumeratedFile</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.key_mapping.KeyMappingNumeratedFile.__delattr__"><code class="docutils literal notranslate"><span class="pre">KeyMappingNumeratedFile.__delattr__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.key_mapping.KeyMappingNumeratedFile.__eq__"><code class="docutils literal notranslate"><span class="pre">KeyMappingNumeratedFile.__eq__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.key_mapping.KeyMappingNumeratedFile.__hash__"><code class="docutils literal notranslate"><span class="pre">KeyMappingNumeratedFile.__hash__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.key_mapping.KeyMappingNumeratedFile.__init__"><code class="docutils literal notranslate"><span class="pre">KeyMappingNumeratedFile.__init__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.key_mapping.KeyMappingNumeratedFile.__repr__"><code class="docutils literal notranslate"><span class="pre">KeyMappingNumeratedFile.__repr__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.key_mapping.KeyMappingNumeratedFile.__setattr__"><code class="docutils literal notranslate"><span class="pre">KeyMappingNumeratedFile.__setattr__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.key_mapping.KeyMappingNumeratedFile.get_dict_key_from_engine"><code class="docutils literal notranslate"><span class="pre">KeyMappingNumeratedFile.get_dict_key_from_engine()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.key_mapping.KeyMappingNumeratedFile.get_engine_key_from_dict"><code class="docutils literal notranslate"><span class="pre">KeyMappingNumeratedFile.get_engine_key_from_dict()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.key_mapping.KeyMappingNumeratedFolder"><code class="docutils literal notranslate"><span class="pre">KeyMappingNumeratedFolder</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.key_mapping.KeyMappingNumeratedFolder.__delattr__"><code class="docutils literal notranslate"><span class="pre">KeyMappingNumeratedFolder.__delattr__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.key_mapping.KeyMappingNumeratedFolder.__eq__"><code class="docutils literal notranslate"><span class="pre">KeyMappingNumeratedFolder.__eq__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.key_mapping.KeyMappingNumeratedFolder.__hash__"><code class="docutils literal notranslate"><span class="pre">KeyMappingNumeratedFolder.__hash__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.key_mapping.KeyMappingNumeratedFolder.__init__"><code class="docutils literal notranslate"><span class="pre">KeyMappingNumeratedFolder.__init__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.key_mapping.KeyMappingNumeratedFolder.__repr__"><code class="docutils literal notranslate"><span class="pre">KeyMappingNumeratedFolder.__repr__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.key_mapping.KeyMappingNumeratedFolder.__setattr__"><code class="docutils literal notranslate"><span class="pre">KeyMappingNumeratedFolder.__setattr__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.key_mapping.KeyMappingNumeratedFolder.get_dict_key_from_engine"><code class="docutils literal notranslate"><span class="pre">KeyMappingNumeratedFolder.get_dict_key_from_engine()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.key_mapping.KeyMappingNumeratedFolder.get_engine_key_from_dict"><code class="docutils literal notranslate"><span class="pre">KeyMappingNumeratedFolder.get_engine_key_from_dict()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.key_mapping.KeyMappingRaw"><code class="docutils literal notranslate"><span class="pre">KeyMappingRaw</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.key_mapping.KeyMappingRaw.__delattr__"><code class="docutils literal notranslate"><span class="pre">KeyMappingRaw.__delattr__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.key_mapping.KeyMappingRaw.__eq__"><code class="docutils literal notranslate"><span class="pre">KeyMappingRaw.__eq__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.key_mapping.KeyMappingRaw.__hash__"><code class="docutils literal notranslate"><span class="pre">KeyMappingRaw.__hash__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.key_mapping.KeyMappingRaw.__init__"><code class="docutils literal notranslate"><span class="pre">KeyMappingRaw.__init__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.key_mapping.KeyMappingRaw.__repr__"><code class="docutils literal notranslate"><span class="pre">KeyMappingRaw.__repr__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.key_mapping.KeyMappingRaw.__setattr__"><code class="docutils literal notranslate"><span class="pre">KeyMappingRaw.__setattr__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.key_mapping.KeyMappingRaw.get_dict_key_from_engine"><code class="docutils literal notranslate"><span class="pre">KeyMappingRaw.get_dict_key_from_engine()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.key_mapping.KeyMappingRaw.get_engine_key_from_dict"><code class="docutils literal notranslate"><span class="pre">KeyMappingRaw.get_engine_key_from_dict()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-file_storehouse.transformation">Transformations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.transformation.TransformationABC"><code class="docutils literal notranslate"><span class="pre">TransformationABC</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.transformation.TransformationABC.__weakref__"><code class="docutils literal notranslate"><span class="pre">TransformationABC.__weakref__</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.transformation.TransformationABC.convert_from_dict_to_engine"><code class="docutils literal notranslate"><span class="pre">TransformationABC.convert_from_dict_to_engine()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.transformation.TransformationABC.convert_from_engine_to_dict"><code class="docutils literal notranslate"><span class="pre">TransformationABC.convert_from_engine_to_dict()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.transformation.TransformationCodecs"><code class="docutils literal notranslate"><span class="pre">TransformationCodecs</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.transformation.TransformationCodecs.__delattr__"><code class="docutils literal notranslate"><span class="pre">TransformationCodecs.__delattr__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.transformation.TransformationCodecs.__eq__"><code class="docutils literal notranslate"><span class="pre">TransformationCodecs.__eq__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.transformation.TransformationCodecs.__hash__"><code class="docutils literal notranslate"><span class="pre">TransformationCodecs.__hash__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.transformation.TransformationCodecs.__init__"><code class="docutils literal notranslate"><span class="pre">TransformationCodecs.__init__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.transformation.TransformationCodecs.__repr__"><code class="docutils literal notranslate"><span class="pre">TransformationCodecs.__repr__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.transformation.TransformationCodecs.__setattr__"><code class="docutils literal notranslate"><span class="pre">TransformationCodecs.__setattr__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.transformation.TransformationCodecs.convert_from_dict_to_engine"><code class="docutils literal notranslate"><span class="pre">TransformationCodecs.convert_from_dict_to_engine()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.transformation.TransformationCodecs.convert_from_engine_to_dict"><code class="docutils literal notranslate"><span class="pre">TransformationCodecs.convert_from_engine_to_dict()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.transformation.TransformationJson"><code class="docutils literal notranslate"><span class="pre">TransformationJson</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.transformation.TransformationJson.__delattr__"><code class="docutils literal notranslate"><span class="pre">TransformationJson.__delattr__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.transformation.TransformationJson.__eq__"><code class="docutils literal notranslate"><span class="pre">TransformationJson.__eq__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.transformation.TransformationJson.__hash__"><code class="docutils literal notranslate"><span class="pre">TransformationJson.__hash__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.transformation.TransformationJson.__init__"><code class="docutils literal notranslate"><span class="pre">TransformationJson.__init__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.transformation.TransformationJson.__repr__"><code class="docutils literal notranslate"><span class="pre">TransformationJson.__repr__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.transformation.TransformationJson.__setattr__"><code class="docutils literal notranslate"><span class="pre">TransformationJson.__setattr__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.transformation.TransformationJson.convert_from_dict_to_engine"><code class="docutils literal notranslate"><span class="pre">TransformationJson.convert_from_dict_to_engine()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.transformation.TransformationJson.convert_from_engine_to_dict"><code class="docutils literal notranslate"><span class="pre">TransformationJson.convert_from_engine_to_dict()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-file_storehouse.engine">Engines</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineABC"><code class="docutils literal notranslate"><span class="pre">EngineABC</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineABC.__weakref__"><code class="docutils literal notranslate"><span class="pre">EngineABC.__weakref__</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineABC.convert_to_absolute_path"><code class="docutils literal notranslate"><span class="pre">EngineABC.convert_to_absolute_path()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineABC.convert_to_relative_path"><code class="docutils literal notranslate"><span class="pre">EngineABC.convert_to_relative_path()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineABC.delete_item"><code class="docutils literal notranslate"><span class="pre">EngineABC.delete_item()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineABC.get_item"><code class="docutils literal notranslate"><span class="pre">EngineABC.get_item()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineABC.list_keys"><code class="docutils literal notranslate"><span class="pre">EngineABC.list_keys()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineABC.set_item"><code class="docutils literal notranslate"><span class="pre">EngineABC.set_item()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineLocal"><code class="docutils literal notranslate"><span class="pre">EngineLocal</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineLocal.__delattr__"><code class="docutils literal notranslate"><span class="pre">EngineLocal.__delattr__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineLocal.__eq__"><code class="docutils literal notranslate"><span class="pre">EngineLocal.__eq__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineLocal.__hash__"><code class="docutils literal notranslate"><span class="pre">EngineLocal.__hash__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineLocal.__init__"><code class="docutils literal notranslate"><span class="pre">EngineLocal.__init__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineLocal.__repr__"><code class="docutils literal notranslate"><span class="pre">EngineLocal.__repr__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineLocal.__setattr__"><code class="docutils literal notranslate"><span class="pre">EngineLocal.__setattr__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineLocal.convert_to_absolute_path"><code class="docutils literal notranslate"><span class="pre">EngineLocal.convert_to_absolute_path()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineLocal.convert_to_relative_path"><code class="docutils literal notranslate"><span class="pre">EngineLocal.convert_to_relative_path()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineLocal.delete_item"><code class="docutils literal notranslate"><span class="pre">EngineLocal.delete_item()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineLocal.get_item"><code class="docutils literal notranslate"><span class="pre">EngineLocal.get_item()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineLocal.list_keys"><code class="docutils literal notranslate"><span class="pre">EngineLocal.list_keys()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineLocal.set_item"><code class="docutils literal notranslate"><span class="pre">EngineLocal.set_item()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineS3"><code class="docutils literal notranslate"><span class="pre">EngineS3</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineS3.__delattr__"><code class="docutils literal notranslate"><span class="pre">EngineS3.__delattr__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineS3.__eq__"><code class="docutils literal notranslate"><span class="pre">EngineS3.__eq__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineS3.__hash__"><code class="docutils literal notranslate"><span class="pre">EngineS3.__hash__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineS3.__init__"><code class="docutils literal notranslate"><span class="pre">EngineS3.__init__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineS3.__repr__"><code class="docutils literal notranslate"><span class="pre">EngineS3.__repr__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineS3.__setattr__"><code class="docutils literal notranslate"><span class="pre">EngineS3.__setattr__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineS3.convert_to_absolute_path"><code class="docutils literal notranslate"><span class="pre">EngineS3.convert_to_absolute_path()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineS3.convert_to_relative_path"><code class="docutils literal notranslate"><span class="pre">EngineS3.convert_to_relative_path()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineS3.delete_item"><code class="docutils literal notranslate"><span class="pre">EngineS3.delete_item()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineS3.ensure_bucket"><code class="docutils literal notranslate"><span class="pre">EngineS3.ensure_bucket()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineS3.get_item"><code class="docutils literal notranslate"><span class="pre">EngineS3.get_item()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineS3.list_keys"><code class="docutils literal notranslate"><span class="pre">EngineS3.list_keys()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.engine.EngineS3.set_item"><code class="docutils literal notranslate"><span class="pre">EngineS3.set_item()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-file_storehouse.extras">Extras</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.extras.Stubber"><code class="docutils literal notranslate"><span class="pre">Stubber</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.extras.Stubber.__init__"><code class="docutils literal notranslate"><span class="pre">Stubber.__init__()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.extras.Stubber.__weakref__"><code class="docutils literal notranslate"><span class="pre">Stubber.__weakref__</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.extras.Stubber.activate"><code class="docutils literal notranslate"><span class="pre">Stubber.activate()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.extras.Stubber.add_client_error"><code class="docutils literal notranslate"><span class="pre">Stubber.add_client_error()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.extras.Stubber.add_response"><code class="docutils literal notranslate"><span class="pre">Stubber.add_response()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.extras.Stubber.assert_no_pending_responses"><code class="docutils literal notranslate"><span class="pre">Stubber.assert_no_pending_responses()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.extras.Stubber.deactivate"><code class="docutils literal notranslate"><span class="pre">Stubber.deactivate()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file_storehouse.extras.client"><code class="docutils literal notranslate"><span class="pre">client()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Felipe N. Schuch
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
