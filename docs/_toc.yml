@@ -1,0 +1,17 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+parts:
+  - caption: Getting Started
+    chapters:
+      - file: getting-started/about.md
+      - file: getting-started/dependencies.md
+      - file: getting-started/use-this-template.md
+  - caption: References
+    chapters:
+      - file: references/further-reading.md
+      - file: references/api-reference.rst
+      - file: references/how-to-contribute.md
+      - file: references/what-is-new.md
