@@ -48,7 +48,7 @@ jobs:
 
   deploy:
     needs: build
-    if: github.event_name == 'push' && github.ref_type == 'tag' && !github.event.pull_request.head.repo.fork
+    if: github.event_name == 'push' && github.ref_type == 'tag' && (github.event.pull_request == null || !github.event.pull_request.head.repo.fork)
     runs-on: ubuntu-latest
     permissions:
       contents: write

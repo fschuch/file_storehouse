@@ -53,7 +53,7 @@ sphinx:
         - "https://docs.python.org/3"
         - null
       boto3:
-        - "https://docs.python.org/3"
+        - "https://boto3.amazonaws.com/v1/documentation/api/latest/index.html"
         - null
       botocore:
         - "https://botocore.readthedocs.io/en/latest/"
