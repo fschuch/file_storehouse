@@ -36,13 +36,13 @@ tests = [
     "pyyaml>=5.0.0,!=5.4,!=5.4.1", # pinned to avoid issues with PyYAML 5.4
 ]
 tests-extra = [
-    "pytest-randomly==3.16.0",
-    "pytest-rerunfailures==15.1",
+    "pytest-randomly==4.0.1",
+    "pytest-rerunfailures==16.0.1",
     "pytest-xdist==3.8.0",
 ]
 docs = [
-    "docutils==0.21.2",
-    "jupyter-book==1.0.4.post1",
+    "docutils==0.22.2",
+    "jupyter-book==2.0.0",
     "sphinx-autobuild==2024.10.3",
     "sphinx==7.4.7",
     "sphinx-github-changelog==1.7.1",
