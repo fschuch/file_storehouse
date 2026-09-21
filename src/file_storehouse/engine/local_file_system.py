@@ -1,8 +1,8 @@
 """Engine for the local file system."""
 
+from collections.abc import Iterator
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Iterator
 
 from file_storehouse.engine.base import EngineABC
 from file_storehouse.type import PathLike
