@@ -1,8 +1,8 @@
 """File manager, the core of file-storehouse."""
 
-from collections.abc import Mapping
+from collections.abc import Iterator, Mapping
 from dataclasses import dataclass, field
-from typing import Any, Iterator, Tuple
+from typing import Any, Tuple
 
 from file_storehouse.engine.base import EngineABC
 from file_storehouse.key_mapping.base import KeyMappingABC
