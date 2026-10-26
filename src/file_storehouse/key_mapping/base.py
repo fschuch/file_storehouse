@@ -24,7 +24,6 @@ class KeyMappingABC(ABC):
         Any
             Key of the Python dictionary.
         """
-        pass
 
     @abstractmethod
     def get_engine_key_from_dict(self, dict_key: Any) -> PathLike:
@@ -41,4 +40,3 @@ class KeyMappingABC(ABC):
         PathLike
             Key of the object at the engine.
         """
-        pass
