@@ -7,7 +7,7 @@ from .raw import KeyMappingRaw
 
 __all__ = [
     "KeyMappingABC",
-    "KeyMappingRaw",
     "KeyMappingNumeratedFile",
     "KeyMappingNumeratedFolder",
+    "KeyMappingRaw",
 ]
