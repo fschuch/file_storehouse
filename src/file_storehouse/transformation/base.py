@@ -10,9 +10,7 @@ class TransformationABC(ABC):
     @abstractmethod
     def convert_from_engine_to_dict(self, input: Any) -> Any:
         """From engine to dict."""
-        pass
 
     @abstractmethod
     def convert_from_dict_to_engine(self, input: Any) -> Any:
         """From dict to engine."""
-        pass
